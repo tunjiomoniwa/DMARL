@@ -1,0 +1,979 @@
+clear all;
+clc;
+clear;
+%%%%%%%%%%These are containers used tostep store metrics from runs of
+%%%%%%%%%%experiments.
+runs_energy = [];
+runs_cov = [];
+runs_geo = [];
+
+runs_energy2 = [];
+runs_cov2 = [];
+runs_geo2 = [];
+
+runs_energy3 = [];
+runs_cov3 = [];
+runs_geo3 = [];
+
+runs_energy4 = [];
+runs_cov4 = [];
+runs_geo4 = [];
+
+for runs = 1:1
+    xlabel('x (m)');
+    ylabel('y (m)');
+    zlabel('h (m)');
+    title('3D Terrain');
+    axis equal;
+
+    grid on;
+
+    hold on;
+    numStaticEndDevices_L = 75;
+    numStaticEndDevices_S = 25;
+    
+    numMobileEndDevices_L = 75;
+    numMobileEndDevices_S = 25;
+    
+    %Max_Cov_capacity = 83; %%%based on bruteforce result on rand_dist
+    Max_Geo_Area= 0.5*0.5;
+    %NumberGED = numStaticEndDevices + numMobileEndDevices + numMobileEndDevices;
+    % static end devices
+    ff=0;
+    if ff ==0
+        rng('default')
+        % static end devices
+        xse = abs(460*rand(1,numStaticEndDevices_L)) + 20; %x-coordinate of a point
+        xse2 = abs(460*rand(1,numStaticEndDevices_S)) + 520; 
+        xse3 = abs(460*rand(1,numStaticEndDevices_L)) + 20; 
+        xse4 = abs(460*rand(1,numStaticEndDevices_S)) + 520; 
+        yse = abs(460*rand(1,numStaticEndDevices_L)) + 20;  %y-coordinate of a point
+        yse2 = abs(460*rand(1,numStaticEndDevices_S)) + 20; 
+        yse3 = abs(460*rand(1,numStaticEndDevices_L)) + 520;
+        yse4 = abs(460*rand(1,numStaticEndDevices_S)) + 520;
+        
+        % mobile end devices
+         xme = abs(500*rand(1,numMobileEndDevices_L)); %x-coordinate of a point
+         xme2 = abs(500*rand(1,numMobileEndDevices_S)); 
+         xme3 = abs(500*rand(1,numMobileEndDevices_L));
+         xme4 = abs(500*rand(1,numMobileEndDevices_S));
+         yme = abs(500*rand(1,numMobileEndDevices_L)); %y-coordinate of a point
+         yme2 = abs(500*rand(1,numMobileEndDevices_S));
+         yme3 = abs(500*rand(1,numMobileEndDevices_L));
+         yme4 = abs(500*rand(1,numMobileEndDevices_S));
+         
+         
+         
+         %%plot(xsef,ysef,'r.')
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%  Uniform distribution  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %     rng('default')
+    % 
+    %     xse = [];
+    %     yse = [];
+    %     for ik = 0:50:500
+    %         for pk = 0:50:500
+    %             xse_clump = ik;
+    %             yse_clump = pk;%, 1, 10);
+    %             xse =  [xse; xse_clump];
+    %             yse =  [yse; yse_clump];
+    %         end
+    %     end
+    %     xse;
+    %     yse;
+        %%%%%%%%%%End of uniform distribution%%%%%%%%%%%%
+    %      %%%%%%%%%%%%%%%%%%%%Edge/border distributrion
+    %     rng('default')
+    %     rng('default')
+    %     foc_x = 20;
+    %     foc_y = 360;
+    %     focalx = [foc_x foc_x foc_y foc_y];
+    %     focaly = [foc_x foc_y foc_x foc_y];
+    % 
+    %     xse = [];
+    %     yse = [];
+    %     for ik = 1:1:4
+    %         for pk = 1:1:25
+    %             randx_val = randi([1 140], 1, 25);
+    %             randy_val = randi([1 140], 1, 25);
+    %             xse_clump = focalx(ik) + randx_val(pk); %, 1, 10);
+    %             yse_clump = focaly(ik) + randy_val(pk);%, 1, 10);
+    %             xse =  [xse; xse_clump];
+    %             yse =  [yse; yse_clump];
+    %         end
+    %     end
+    %     xse;
+    %     yse;
+
+        %%%%%%%%%%%%%%%%%%%  Clumped distribution %%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %     rng('default')
+    %     clumpsize =10;
+    %     focalx = randi([100 400], 1, clumpsize);
+    %     focaly = randi([100 400], 1, clumpsize);
+    %     randx_val = randi([1 100], 1, clumpsize);
+    %     randy_val = randi([1 100], 1, clumpsize);
+    %     xse = [];
+    %     yse = [];
+    %     for ik = 1:1:clumpsize
+    %         for pk = 1:1:clumpsize
+    %             xse_clump = focalx(ik) + randx_val(pk); 
+    %             yse_clump = focaly(ik) + randy_val(pk);
+    %             xse =  [xse; xse_clump];
+    %             yse =  [yse; yse_clump];
+    %         end
+    %     end
+    %     xse;
+    %     yse;
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %     %%% Clustering (kmeans unsupervised learning)
+    %     clusters = 1;
+    %     Xclus = [xse; yse]';
+    %     [idx,C] = kmeans(Xclus,clusters); %inbuilt ML toolbox fxn
+    %     C;    
+    end
+
+    %r = 180;
+    %initialization
+    len_action = 7;
+    x1 = 0; %randi([150 250]);
+    y1 = 0; %randi([200 300]);
+    z1 = 250; %randi([150 250]);
+    x2 = 500; 
+    y2 = 0; 
+    z2 = 250; 
+    x3 = 0; 
+    y3 = 500; 
+    z3 = 250; 
+    x4 = 500; 
+    y4 = 0; 
+    z4 = 250;
+    
+    
+    xo=999;
+    yo=999;
+    zo=999;
+    lapping1 = 0;
+    lapping2 = 0;
+    lapping3 = 0;
+    lapping4 = 0;
+    
+    energyval1 = randi([0 5]); %Initial UAV battery level for UAV 1
+    energyval2 = randi([0 5]); %Initial UAV battery level for UAV 2
+    energyval3 = randi([0 5]); %Initial UAV battery level for UAV 3
+    energyval4 = randi([0 5]); %Initial UAV battery level for UAV 4
+    
+    act_init1 = randi(len_action,1); %Explore action space
+    act_init2 = randi(len_action,1); %Explore action space
+    act_init3 = randi(len_action,1); %Explore action space
+    act_init4 = randi(len_action,1); %Explore action space
+    
+    obs_init1 = stepBL1_static(act_init1, x1, y1, z1, energyval1, lapping1, xo, yo, zo, xse, yse, xme, yme);
+    obs_init2 = stepBL2_static(act_init2, x2, y2, z2, energyval2, lapping2, xo, yo, zo, xse2, yse2, xme2, yme2);
+    obs_init3 = stepBL3_static(act_init3, x3, y3, z3, energyval3, lapping3, xo, yo, zo, xse3, yse3, xme3, yme3);
+    obs_init4 = stepBL4_static(act_init4, x4, y4, z4, energyval4, lapping4, xo, yo, zo, xse4, yse4, xme4, yme4);
+    
+    x1= obs_init1(1);
+    y1= obs_init1(2);
+    z1 = obs_init1(3);
+    x2= obs_init2(1);
+    y2= obs_init2(2);
+    z2 = obs_init2(3);
+    x3= obs_init3(1);
+    y3= obs_init3(2);
+    z3 = obs_init3(3);
+    x4= obs_init4(1);
+    y4= obs_init4(2);
+    z4 = obs_init4(3);
+
+
+
+    %the coverage of each drone
+    r = sqrt((1.21*z1).^2 - z1.^2);
+    r2 = sqrt((1.21*z2).^2 - z2.^2);
+    r3 = sqrt((1.21*z3).^2 - z3.^2);
+    r4 = sqrt((1.21*z4).^2 - z4.^2);
+    
+    th = 0:pi/50:2*pi;
+    xunit1 = r(1) .* cos(th) + x1;
+    yunit1 = r(1) .* sin(th) + y1;
+    
+    %%%%%%%%check
+    xunit2 = r2(1) .* cos(th) + x2;
+    yunit2 = r2(1) .* sin(th) + y2;
+    
+    xunit3 = r3(1) .* cos(th) + x3;
+    yunit3 = r3(1) .* sin(th) + y3;
+    
+    xunit4 = r4(1) .* cos(th) + x4;
+    yunit4 = r4(1) .* sin(th) + y4;
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    iteration_steps = 7000;
+    episodes = 100;
+    alpha = 0.0001;
+    gamma =0.95;  
+    len_action =7;
+    Q1 = zeros(5*5*4,len_action);
+    Q2 = zeros(5*5*4,len_action);
+    Q3 = zeros(5*5*4,len_action);
+    Q4 = zeros(5*5*4,len_action);
+    
+
+
+    value = 0;
+    itercount1 =[];
+    rewardcount1 =[];
+    rewcumsum1 = 0;
+    
+    value2 = 0;
+    itercount2 =[];
+    rewardcount2 =[];
+    rewcumsum2 = 0;
+    
+    value3 = 0;
+    itercount3 =[];
+    rewardcount3 =[]; 
+    rewcumsum3 = 0;
+    
+    value4 = 0;
+    itercount4 =[];
+    rewardcount4 =[];
+    rewcumsum4 = 0;
+
+    fairfactor = [];
+    UAV1Energycount = [];
+    UAV1CoverageScorecount = [];
+    UAV1GeoAreacount = [];
+    UAV2Energycount = [];
+    UAV2CoverageScorecount = [];
+    UAV2GeoAreacount = [];
+    UAV3Energycount = [];
+    UAV3CoverageScorecount = [];
+    UAV3GeoAreacount = [];
+    UAV4Energycount = [];
+    UAV4CoverageScorecount = [];
+    UAV4GeoAreacount = [];
+    
+    
+    log = [];
+    
+    for epi = 1: episodes
+
+        Q1;
+        Q2;
+        Q3;
+        Q4;
+        xse_ = xse; 
+        xse2_ = xse2; 
+        xse3_  = xse2; 
+        xse4_  = xse2; 
+        yse_  = xse2; 
+        yse2_  = xse2; 
+        yse3_ = xse2; 
+        yse4_  = xse2; 
+        xsef = [xse xse2 xse3 xse4 xme xme2 xme3 xme4];
+        ysef = [yse yse2 yse3 yse4 xme xme2 xme3 xme4];
+        
+
+        %%Try to Randomize the initial learning stage (exploration, the after
+        %%learning we can try to keep the initial point)
+        len_action = 7;
+        cur_action1 = randi(len_action,1); %Explore action space
+        cur_action2 = randi(len_action,1); %Explore action space
+        cur_action3 = randi(len_action,1);
+        cur_action4 = randi(len_action,1);
+
+        %%%INITIALISE DEPLOYMENT OF UAVS AND ENERGY LEVEL
+        if epi<3*episodes/4
+            x1 = randi([50 150]);
+            y1 = randi([50 150]);
+            z1 = randi([200 300]);
+            energyval1 = randi([0 5]);
+            %%%%%%%%%
+            x2 = randi([50 150]);
+            y2 = randi([500 550]);
+            z2 = randi([200 300]);
+            energyval2 = randi([0 5]);
+            
+            x3 = randi([500 550]);
+            y3 = randi([50 150]);
+            z3 = randi([200 300]);
+            energyval3 = randi([0 5]);
+            
+            x4 = randi([500 600]);
+            y4 = randi([50 600]);
+            z4 = randi([200 300]);
+            energyval4 = randi([0 5]);
+        else 
+            x1 = randi([50 150]);
+            y1 = randi([50 150]);
+            z1 = randi([200 300]);
+            energyval1 = randi([0 5]);
+            %%%%%%%%%
+            x2 = randi([50 150]);
+            y2 = randi([500 550]);
+            z2 = randi([200 300]);
+            energyval2 = randi([0 5]);
+            
+            x3 = randi([500 550]);
+            y3 = randi([50 150]);
+            z3 = randi([200 300]);
+            energyval3 = randi([0 5]);
+            
+            x4 = randi([500 600]);
+            y4 = randi([50 600]);
+            z4 = randi([200 300]);
+            energyval4 = randi([0 5]);
+        end
+        obs_over = stepOverlap_static(x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4, xsef, ysef);
+
+        obs1 = stepBL1_static(cur_action1, x1, y1, z1, energyval1, lapping1, xo, yo, zo, xse_, yse_, xme, yme);
+        obs2 = stepBL2_static(cur_action2, x2, y2, z2, energyval2, lapping2, xo, yo, zo, xse2_, yse2_, xme2, yme2);
+        obs3 = stepBL3_static(cur_action3, x3, y3, z3, energyval3, lapping3, xo, yo, zo, xse3_, yse3_, xme3, yme3);
+        obs4 = stepBL4_static(cur_action4, x4, y4, z4, energyval4, lapping4, xo, yo, zo, xse4_, yse4_, xme4, yme4);
+        
+        UAV1ener =  obs1(4);
+        UAV1cover =  obs1(5);
+        UAV1geogA =  obs1(6);
+        %%%%%%%%%%%%
+        UAV2ener =  obs2(4);
+        UAV2cover =  obs2(5);
+        UAV2geogA =  obs2(6);
+        %%%%%%%%%%%%
+        UAV3ener =  obs3(4);
+        UAV3cover =  obs3(5);
+        UAV3geogA =  obs3(6);
+        %%%%%%%%%%%%
+        UAV4ener =  obs4(4);
+        UAV4cover =  obs4(5);
+        UAV4geogA =  obs4(6);
+
+
+        current_state1  = Boxing1(obs1(1), obs1(2), obs1(3)); %mapping to current state
+        current_state2  = Boxing2(obs2(1), obs2(2), obs2(3)); %mapping to current state
+        current_state3  = Boxing3(obs3(1), obs3(2), obs3(3)); 
+        current_state4  = Boxing4(obs4(1), obs4(2), obs4(3)); 
+        %current_state1  = groupingBL1(obs1(1), obs1(2), obs1(3)); %mapping to current state
+
+        %obs1 %%geog_area %%initialization %%%%%not useful now
+        old_obs1_5 = obs1(5);
+        old_obs1_4 = obs1(4);
+        %%%%%
+        old_obs2_5 = obs2(5);
+        old_obs2_4 = obs2(4);
+        %%%%%
+        old_obs3_5 = obs3(5);
+        old_obs3_4 = obs3(4);
+        %%%%%
+        old_obs4_5 = obs4(5);
+        old_obs4_4 = obs4(4);
+        
+        oldConn_count1 = obs_over(1);
+        oldConn_count2 = obs_over(2);
+        oldConn_count3 = obs_over(3);
+        oldConn_count4 = obs_over(4);
+        
+        
+        old_ene1 = obs1(4);
+         old_ene2 = obs2(4);             
+         old_ene3 = obs3(4);             
+         old_ene4 = obs4(4);
+        Team_factor =0;
+        
+        iter=0;
+        count_iter =0;
+        maxobs1_5 = 0;
+        maxobs2_5 = 0;
+        maxobs3_5 = 0;
+        maxobs4_5 = 0;
+        
+        ctuav1 = 0;
+        ctuav2 = 0;
+        ctuav3 = 0;
+        ctuav4 = 0;
+
+        while (iter < iteration_steps) 
+
+            iter= iter + 1;
+            count_iter = count_iter + 1;
+
+            
+            %%for 100 epi
+             if epi<25
+                epsilon = 0.9888;
+            elseif epi>=25 && epi <=60
+                epsilon = 1-epi/80;
+            else
+                epsilon =exp(-0.035*epi);
+            end
+            
+
+
+            old_obs1_5 = obs1(5);
+            old_obs1_4 = obs1(4);
+            %%%%%%%
+            old_obs2_5 = obs2(5);
+            old_obs2_4 = obs2(4);
+            %%%%%%%
+            old_obs3_5 = obs3(5);
+            old_obs3_4 = obs3(4);
+            %%%%%%%
+            old_obs4_5 = obs4(5);
+            old_obs4_4 = obs4(4);
+            
+            oldConn_count1 = obs_over(1);
+            oldConn_count2 = obs_over(2);
+            oldConn_count3 = obs_over(3);
+            oldConn_count4 = obs_over(4);
+            
+            %%%%added this as control after task
+            if obs1(7) ||obs_over(1)>=150
+                action1 = 7;
+            else
+                action1 = select_action1(epsilon, current_state1, Q1);
+            end
+            
+            %%%%%%%%%%%%%
+            if obs2(7) ||obs_over(2)>=150
+                action2 = 7;
+            else
+                action2 = select_action2(epsilon, current_state2, Q2);
+            end
+            
+            %%%%%%%%%%%%%
+            if obs3(7) ||obs_over(3)>=150
+                action3 = 7;
+            else
+                action3 = select_action3(epsilon, current_state3, Q3);
+            end
+            
+            %%%%%%%%%%%%%
+            if obs4(7) ||obs_over(4)>=150
+                action4 = 7;
+            else
+                action4 = select_action4(epsilon, current_state4, Q4);
+            end
+            
+            
+            [obsmobx1, obsmoby1] = RWP1(xme, yme);
+            [obsmobx2, obsmoby2] = RWP2(xme2, yme2);
+            [obsmobx3, obsmoby3] = RWP3(xme3, yme3);
+            [obsmobx4, obsmoby4] = RWP4(xme4, yme4);
+            
+            xsef_ob=[xse xse2 xse3 xse4 obs1(12:12+numMobileEndDevices_L-1) obs2(12:12+numMobileEndDevices_S-1) obs3(12:12+numMobileEndDevices_L-1) obs4(12:12+numMobileEndDevices_S-1)];
+            ysef_ob=[yse yse2 yse3 yse4 obs1(12+numMobileEndDevices_L:12+numMobileEndDevices_L+numMobileEndDevices_L-1) obs2(12+numMobileEndDevices_S:12+numMobileEndDevices_S+numMobileEndDevices_S-1) obs3(12+numMobileEndDevices_L:12+numMobileEndDevices_L+numMobileEndDevices_L-1) obs4(12+numMobileEndDevices_S:12+numMobileEndDevices_S+numMobileEndDevices_S-1)];
+            obs_over = stepOverlap_static(obs1(1), obs1(2), obs1(3), obs2(1), obs2(2), obs2(3), obs3(1), obs3(2), obs3(3), obs4(1), obs4(2), obs4(3), xsef_ob, ysef_ob);
+            %%[obs_over(1) obs_over(2) obs_over(3) obs_over(4) obs_over(5)];
+            obs1 = stepBL1_static(action1, obs1(1), obs1(2), obs1(3), obs1(4), obs1(12), obs2(1), obs2(2), obs2(3), xse_, yse_, obs1(12:12+numMobileEndDevices_L-1), obs1(12+numMobileEndDevices_L:12+numMobileEndDevices_L+numMobileEndDevices_L-1));
+            obs2 = stepBL2_static(action2, obs2(1), obs2(2), obs2(3), obs2(4), obs2(12), obs1(1), obs1(2), obs1(3), xse2_, yse2_, obs2(12:12+numMobileEndDevices_S-1), obs2(12+numMobileEndDevices_S:12+numMobileEndDevices_S+numMobileEndDevices_S-1));
+            obs3 = stepBL3_static(action3, obs3(1), obs3(2), obs3(3), obs3(4), obs3(12), obs1(1), obs1(2), obs1(3), xse3_, yse3_, obs3(12:12+numMobileEndDevices_L-1), obs3(12+numMobileEndDevices_L:12+numMobileEndDevices_L+numMobileEndDevices_L-1));
+            obs4 = stepBL4_static(action4, obs4(1), obs4(2), obs4(3), obs4(4), obs4(12), obs3(1), obs3(2), obs3(3), xse4_, yse4_, obs4(12:12+numMobileEndDevices_S-1), obs4(12+numMobileEndDevices_S:12+numMobileEndDevices_S+numMobileEndDevices_S-1));
+           %%%%%%%%%%%%%%%%%%%
+           %%overlapping state information from the environment
+           %%%%%%%%%%%%%%
+           %[xse yse]
+           
+            %new_state1  = groupingBL1(obs1(1), obs1(2), obs1(3));
+            new_state1  = Boxing1(obs1(1), obs1(2), obs1(3));
+            new_state2  = Boxing2(obs2(1), obs2(2), obs2(3));
+            new_state3  = Boxing3(obs3(1), obs3(2), obs3(3));
+            new_state4  = Boxing4(obs4(1), obs4(2), obs4(3));
+            %[x1, y1, z1, energy1, coveragefactorstatic1, UAVgeographicalArea, done, dead,  goal1, uav1distFromgoal, coveragefactormobile, xme1, yme1] = stepBL1_static(cur_action1, x1s, y1s, z1s);
+            
+            %[new_state1 new_state2 new_state3 new_state4]
+            %[obs1(1), obs1(2), obs1(3), obs2(1), obs2(2), obs2(3), obs3(1), obs3(2), obs3(3), obs4(1), obs4(2), obs4(3)]
+            %obs_over = stepOverlap_static(obs1(1), obs1(2), obs1(3), obs2(1), obs2(2), obs2(3), obs3(1), obs3(2), obs3(3), obs4(1), obs4(2), obs4(3));
+           [obs_over(1) obs_over(2) obs_over(3) obs_over(4)];
+            [oldConn_count1 oldConn_count2 oldConn_count3 oldConn_count4];
+            tot_obs_over = obs_over(1) + obs_over(2)+ obs_over(3)+ obs_over(4);
+            tot_oldConn_count = oldConn_count1 + oldConn_count2 + oldConn_count3 + oldConn_count4;
+            
+            
+            ave_ene_old1 = old_ene1/(1+iter);
+            present_ave_ene1 =  obs1(4)/(2+iter);
+            ave_ene_old2 = old_ene2/(1+iter);
+            present_ave_ene2 =  obs2(4)/(2+iter);
+            ave_ene_old3 = old_ene3/(1+iter);
+            present_ave_ene3 =  obs3(4)/(2+iter);
+            ave_ene_old4 = old_ene4/(1+iter);
+            present_ave_ene4 =  obs4(4)/(2+iter);
+            
+            if tot_obs_over > tot_oldConn_count 
+                Team_factor = 1;            
+            else 
+                Team_factor = -1;
+            end
+            Team_factor;
+            
+            maxobs1_5 = max(maxobs1_5, obs1(5));
+            maxobs2_5 = max(maxobs2_5, obs2(5));
+            maxobs3_5 = max(maxobs3_5, obs3(5));
+            maxobs4_5 = max(maxobs4_5, obs4(5));
+
+            uav1seperationMatrix = CalcDistance(obs1(1), obs1(2), obs1(3),obs2(1), obs2(2), obs2(3));
+            uav2seperationMatrix = CalcDistance(obs1(1), obs1(2), obs1(3),obs2(1), obs2(2), obs2(3));
+            uav3seperationMatrix = CalcDistance(obs1(1), obs1(2), obs1(3),obs3(1), obs3(2), obs3(3));
+            uav4seperationMatrix = CalcDistance(obs4(1), obs4(2), obs4(3),obs3(1), obs3(2), obs3(3));
+            
+            
+            %obs2
+            %nooverlap12 = uav1seperationMatrix >= 400 || uav2seperationMatrix >=400;
+            %overlap12 = uav1seperationMatrix <400 || uav2seperationMatrix <400;
+            %% oldConn_count1 = obs_over(1);
+            if obs_over(1) < oldConn_count1 %&& obs1(7) == 0
+                reward1 = -1;
+            elseif obs_over(1) == oldConn_count1 %&& obs1(7) == 0
+                reward1 = 0;
+            else 
+                reward1 = 1;
+            end
+            reward1 = reward1 + Team_factor + (ave_ene_old1 - present_ave_ene1)/(ave_ene_old1 + present_ave_ene1);
+            
+            %%%%%%%%%%%%%%%%%%%%%%%
+            if obs_over(2) < oldConn_count2 %&& obs2(7) == 0
+                reward2 = -1;
+            elseif obs_over(2) == oldConn_count2 %&& obs2(7) == 0
+                reward2 = 0;
+            else
+                reward2 = 1;
+%             else %if overlap12
+%                 reward2 = 0;%-5;
+            end
+            reward2 =  reward2 + Team_factor + (ave_ene_old2 - present_ave_ene2)/(ave_ene_old2 + present_ave_ene2);
+            
+            %%%%%%%%%%%%%%%%%%%%%%%
+            if obs_over(3) < oldConn_count3 % && obs3(7) == 0
+                reward3 = -1;
+            elseif obs_over(3) == oldConn_count3 %&& obs3(7) == 0
+                reward3 = 0;
+            else
+                reward3 = 1;
+%             else %if overlap12
+%                 reward2 = 0;%-5;
+            end
+            reward3 = reward3 + Team_factor + (ave_ene_old3 - present_ave_ene3)/(ave_ene_old3 + present_ave_ene3);
+            
+            %%%%%%%%%%%%%%%%%%%%%%%
+            if obs_over(4) < oldConn_count4 %&& obs4(7) == 0
+                reward4 = -1;
+            elseif obs_over(4) == oldConn_count4 %&& obs4(7) == 0
+                reward4 = 0;
+            else
+                reward4 = 1;             
+            end
+            reward4 = reward4 + Team_factor + (ave_ene_old4 - present_ave_ene4)/(ave_ene_old4 + present_ave_ene4);
+            
+            
+            dead1 = obs1(8);
+            goal1 = obs1(9); 
+            %%%%
+            dead2 = obs2(8);
+            goal2 = obs2(9); 
+            %%%%
+            dead3 = obs3(8);
+            goal3 = obs3(9); 
+            %%%%
+            dead4 = obs4(8);
+            goal4 = obs4(9); 
+            %goal = maxobs1_5;
+            %%remove later
+            obs1;
+            obs2;
+            obs3;
+            obs4;
+            
+            if epi<3*episodes/4 && obs1(7)==0 
+                % update q values
+                Q1(current_state1,action1) = update_Q1(Q1, current_state1, new_state1, action1, reward1, alpha, gamma);                
+            end  
+            if epi<3*episodes/4 && obs2(7)==0
+                Q2(current_state2,action2) = update_Q2(Q2, current_state2, new_state2, action2, reward2, alpha, gamma);
+            end   
+            if epi<3*episodes/4 && obs3(7)==0
+                Q3(current_state3,action3) = update_Q3(Q3, current_state3, new_state3, action3, reward3, alpha, gamma);
+            end
+            if epi<3*episodes/4 && obs4(7)==0
+                Q4(current_state4,action4) = update_Q4(Q4, current_state4, new_state4, action4, reward4, alpha, gamma);
+            end
+            
+
+            current_state1 = new_state1;
+            current_state2 = new_state2;
+            current_state3 = new_state3;
+            current_state4 = new_state4;            
+           
+             old_ene1 = obs1(4);
+             old_ene2 = obs2(4);             
+             old_ene3 = obs3(4);             
+             old_ene4 = obs4(4);
+            
+            if obs1(7) ||obs_over(1)>=150
+               % disp(['UAV-1 Reached goal state @ ', num2str(iter)]) 
+                UAV1ener =  obs1(4);
+                UAV1cover =  obs_over(1); %obs1(5) + obs1(11);
+                UAV1geogA =  obs1(6);
+                ctuav1 = ctuav1 +1;
+                %break;%                  
+            end
+            
+            %%%%%%%%
+            
+            if obs2(7) ||obs_over(2)>=150 
+               % disp(['UAV-2 Reached goal state @ ', num2str(iter)]) 
+                UAV2ener =  obs2(4);
+                UAV2cover =  obs_over(2); %obs2(5) + obs2(11);
+                UAV2geogA =  obs2(6);
+                ctuav2 = ctuav2 +1;
+                %break;%                  
+            end
+            
+            %%%%%%%%%
+             if obs3(7) ||obs_over(3)>=150 
+               % disp(['UAV-3 Reached goal state @ ', num2str(iter)]) 
+                UAV3ener =  obs3(4);
+                UAV3cover =  obs_over(3); %obs3(5) + obs3(11);
+                UAV3geogA =  obs3(6);
+                ctuav3 = ctuav3 +1;
+                %break;%                  
+             end
+            
+             %%%%%%%%%
+             if obs4(7) ||obs_over(4)>=150 
+               % disp(['UAV-4 Reached goal state @ ', num2str(iter)]) 
+                UAV4ener =  obs4(4);
+                UAV4cover =  obs_over(4); % obs4(5) + obs4(11);
+                UAV4geogA =  obs4(6);
+                ctuav4 = ctuav4 +1;
+                %break;%                  
+            end
+            
+            if ctuav1 > 0 && ctuav2 > 0 && ctuav3 > 0 && ctuav4 > 0 
+                break;
+            end
+
+
+            %end
+
+            if dead1 ==1 && dead2 ==1 && dead3 ==1 && dead4 ==1 
+                disp(['UAVs Battery depleted @ ', num2str(iter)])
+                UAV1ener =  obs1(4);
+                UAV2ener =  obs2(4);
+                UAV3ener =  obs3(4);
+                UAV4ener =  obs4(4);
+                break;
+            end
+            
+            
+
+            %the coverage of each drone
+            r1 = sqrt((1.21*obs1(3)).^2 - obs1(3).^2);
+            r2 = sqrt((1.21*obs2(3)).^2 - obs2(3).^2);
+            r3 = sqrt((1.21*obs3(3)).^2 - obs3(3).^2);
+            r4 = sqrt((1.21*obs4(3)).^2 - obs4(3).^2);
+            th = 0:pi/50:2*pi;
+            xunit1 = r1 .* cos(th) + obs1(1);
+            yunit1 = r1 .* sin(th) + obs1(2);
+            
+            xunit2 = r2 .* cos(th) + obs2(1);
+            yunit2 = r2 .* sin(th) + obs2(2);
+            
+            xunit3 = r3 .* cos(th) + obs3(1);
+            yunit3 = r3 .* sin(th) + obs3(2);
+            
+            xunit4 = r4 .* cos(th) + obs4(1);
+            yunit4 = r4 .* sin(th) + obs4(2);
+            
+            %%%%%%%%%%%
+            
+            scatter3(obs1(1), obs1(2), obs1(3), '<', 'MarkerFaceColor','k','MarkerEdgeColor','k');
+            hold on;
+            scatter3(obs2(1), obs2(2), obs2(3), '<', 'MarkerFaceColor','k','MarkerEdgeColor','k');
+            hold on;
+            scatter3(obs3(1), obs3(2), obs3(3), '<', 'MarkerFaceColor','k','MarkerEdgeColor','k');
+            hold on;
+            scatter3(obs4(1), obs4(2), obs4(3), '<', 'MarkerFaceColor','k','MarkerEdgeColor','k');
+            hold on;
+            xlabel('x (m)');
+            ylabel('y (m)');
+            zlabel('h (m)');
+            %scatter3(obs1(1)+20, obs1(2)+20, obs1(3)+20, '<', 'MarkerFaceColor','k','MarkerEdgeColor','k');
+            plot(xse, yse, 'bo', 'MarkerSize',2, 'MarkerFaceColor','b','MarkerEdgeColor','b');
+            plot(xunit1,yunit1,'k.')
+            hold on;
+            plot(xse2, yse2, 'bo', 'MarkerSize',2, 'MarkerFaceColor','b','MarkerEdgeColor','b');
+            plot(xunit2,yunit2,'k.')
+            hold on;
+            plot(xse3, yse3, 'bo', 'MarkerSize',2, 'MarkerFaceColor','b','MarkerEdgeColor','b');
+            plot(xunit3,yunit3,'k.')
+            hold on;
+            plot(xse4, yse4, 'bo', 'MarkerSize',2, 'MarkerFaceColor','b','MarkerEdgeColor','b');
+            plot(xunit4,yunit4,'k.')
+            hold on;
+            %plot(Xcent(:,1),Xcent(:,2),'rx',...
+             %   'MarkerSize',15,'LineWidth',3) 
+            %plot(C(:,1),C(:,2),'rx',...
+             %   'MarkerSize',15,'LineWidth',3) 
+    %                 plot(xunit3,yunit3,'k.')
+    %                 plot(xunit4,yunit4,'k.')
+    %                 plot(xunit5,yunit5,'k.')
+    %                 plot(xunit6,yunit6,'k.')
+    %                 plotcube([100,100,0],100,100,100,'r');
+    %                 plotcube([700,300,0],120,100,50,'b');
+    %                 plotcube([200,900,0],100,100,50,'y');
+    %                 plotcube([300,500,0],100,100,150,'c');
+    %                 plotcube([800,900,0],80,300,100,'g');
+                    for hh =1: 1
+                        plot(obs1(12:12+numMobileEndDevices_L-1), obs1(12+numMobileEndDevices_L:12+ numMobileEndDevices_L+ numMobileEndDevices_L -1),'*','MarkerSize',2,'MarkerFaceColor','r','MarkerEdgeColor','r');
+                        hold on;
+                        plot(obs2(12:12+numMobileEndDevices_S-1), obs2(12+numMobileEndDevices_S:12+ numMobileEndDevices_S+ numMobileEndDevices_S -1),'*','MarkerSize',2,'MarkerFaceColor','r','MarkerEdgeColor','r');
+                         hold on;
+                        plot(obs3(12:12+numMobileEndDevices_L-1), obs3(12+numMobileEndDevices_L:12+ numMobileEndDevices_L+ numMobileEndDevices_L -1),'*','MarkerSize',2,'MarkerFaceColor','r','MarkerEdgeColor','r');
+                         hold on;
+                        plot(obs4(12:12+numMobileEndDevices_S-1), obs4(12+numMobileEndDevices_S:12+ numMobileEndDevices_S+ numMobileEndDevices_S -1),'*','MarkerSize',2,'MarkerFaceColor','r','MarkerEdgeColor','r');
+    %                     plot(xme1,yme1,'*','MarkerSize',2,'MarkerFaceColor','r','MarkerEdgeColor','r');
+    %                     plot(xme2,yme2,'*','MarkerSize',2,'MarkerFaceColor','r','MarkerEdgeColor','r');
+                        %axis([-20 1020 -20 1020])
+                        axis([-20 1020 -20 1020])
+                        %legend('Coverage region', 'UAV-BS','End-devices')
+
+                        grid on;
+                        pause(.1)
+                        cla
+                  end
+                    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                    
+                    UAV1ener;
+                    UAV1cover;
+                    UAV1geogA;              
+            
+
+
+        end
+        if epi == episodes
+            
+%             nonzeros(Q1)
+%             nonzeros(Q2)
+%             nonzeros(Q3)
+%             nonzeros(Q4)
+        end
+        disp(['End of Episode - ', num2str(epi)])
+        %UAV1cover = max(obs_over(1), UAV1cover);
+        %UAV2cover = max(obs_over(2), UAV2cover);
+        %UAV3cover = max(obs_over(3), UAV3cover);
+        %UAV4cover = max(obs_over(4), UAV4cover);
+        
+        if obs_over(1)>=150
+            UAV1cover =150;
+        else
+            UAV1cover = max(obs_over(1), UAV1cover);
+        end
+        if obs_over(2)>=150
+            UAV2cover =150;
+        else
+            UAV2cover = max(obs_over(2), UAV2cover);
+        end
+        if obs_over(3)>=150
+            UAV3cover =150;
+        else
+            UAV3cover = max(obs_over(3), UAV3cover);
+        end
+        if obs_over(4)>=150
+            UAV4cover =150;
+        else
+            UAV4cover = max(obs_over(4), UAV4cover);
+        end
+        
+        [UAV1cover UAV2cover UAV3cover UAV4cover (UAV1cover+UAV2cover+UAV3cover+UAV4cover)]
+        %print("End of episode #",epi, "  in ", iter , "iterations") 
+        
+        fairness = ((UAV1cover + UAV2cover + UAV3cover + UAV4cover)^2)/(4*(UAV1cover^2 + UAV2cover^2 + UAV3cover^2 + UAV4cover^2));
+        %fairT = (UAV1cover + UAV2cover + UAV3cover + UAV4cover)/400;
+
+        fairfactor = [fairfactor, fairness];
+
+
+        UAV1Energycount = [UAV1Energycount, UAV1ener];
+        UAV1CoverageScorecount = [UAV1CoverageScorecount, UAV1cover];
+        UAV1GeoAreacount = [UAV1GeoAreacount, UAV1geogA];
+        
+        UAV2Energycount = [UAV2Energycount, UAV2ener];
+        UAV2CoverageScorecount = [UAV2CoverageScorecount, UAV2cover];
+        UAV2GeoAreacount = [UAV2GeoAreacount, UAV2geogA];
+        
+        UAV3Energycount = [UAV3Energycount, UAV3ener];
+        UAV3CoverageScorecount = [UAV3CoverageScorecount, UAV3cover];
+        UAV3GeoAreacount = [UAV3GeoAreacount, UAV3geogA];
+        
+        UAV4Energycount = [UAV4Energycount, UAV4ener];
+        UAV4CoverageScorecount = [UAV4CoverageScorecount, UAV4cover];
+        UAV4GeoAreacount = [UAV4GeoAreacount, UAV4geogA];
+
+        itercount1 =[itercount1, iter];
+        itercount2 =[itercount2, iter];
+        itercount3 =[itercount3, iter];
+        itercount4 =[itercount4, iter];
+        rewcumsum1 = rewcumsum1 + reward1;% count_iter/(reward1 + 0.000001);
+        rewcumsum2 = rewcumsum2 + reward2;
+        rewcumsum3 = rewcumsum3 + reward3;
+        rewcumsum4 = rewcumsum4 + reward4;
+        %rewcumsum1 = rewcumsum1 + reward1;
+        rewardcount1 =[rewardcount1, rewcumsum1];
+        rewardcount2 =[rewardcount2, rewcumsum2];
+        rewardcount3 =[rewardcount3, rewcumsum3];
+        rewardcount4 =[rewardcount4, rewcumsum4];
+
+    end
+
+    %log;
+    %save('log_data.mat','log')
+    runs_energy = [runs_energy; UAV1Energycount+UAV2Energycount+UAV3Energycount+UAV4Energycount];
+    runs_cov = [runs_cov; UAV1CoverageScorecount+UAV2CoverageScorecount+UAV3CoverageScorecount+UAV4CoverageScorecount];
+    runs_geo = [runs_geo; UAV1GeoAreacount+UAV2GeoAreacount+UAV3GeoAreacount+UAV4GeoAreacount];
+    
+%     runs_energy = [runs_energy; UAV1Energycount];
+%     runs_cov = [runs_cov; UAV1CoverageScorecount];
+%     runs_geo = [runs_geo; UAV1GeoAreacount];
+%     
+%     runs_energy2 = [runs_energy2; UAV2Energycount];
+%     runs_cov2 = [runs_cov2; UAV2CoverageScorecount];
+%     runs_geo2 = [runs_geo2; UAV2GeoAreacount];
+%     
+%     runs_energy3 = [runs_energy3; UAV3Energycount];
+%     runs_cov3 = [runs_cov3; UAV3CoverageScorecount];
+%     runs_geo3 = [runs_geo3; UAV3GeoAreacount];
+%     
+%     runs_energy4 = [runs_energy4; UAV4Energycount];
+%     runs_cov4 = [runs_cov4; UAV4CoverageScorecount];
+%     runs_geo4 = [runs_geo4; UAV4GeoAreacount];
+end
+
+% ed = runs_energy(1:5, 81:100);
+% cd = runs_cov(1:5, 81:100);
+% gd = runs_geo(1:5, 81:100)
+% 
+save('fair_rw_data_uneven_new.mat','fairfactor')
+% 
+% save('energy_uneven_run_new.mat','ed');
+% save('cov_uneven_run_new.mat','cd');
+% save('geo_uneven_run_new.mat','gd');
+
+% writematrix(runs_energy,'C:\Users\tunji\Documents\GitHub\2020-Wimob\CodeMatlabSimulation\UAV and Mobile end devices matlab code\results\results_single_agent\single_dynamic_ours\energy_1.xlsx')
+% writematrix(runs_cov,'C:\Users\tunji\Documents\GitHub\2020-Wimob\CodeMatlabSimulation\UAV and Mobile end devices matlab code\results\results_single_agent\single_dynamic_ours\cov_1.xlsx')
+% writematrix(runs_geo,'C:\Users\tunji\Documents\GitHub\2020-Wimob\CodeMatlabSimulation\UAV and Mobile end devices matlab code\results\results_single_agent\single_dynamic_ours\geo_1.xlsx')
+
+% % save('C:\Users\tunji\Documents\GitHub\2020-Wimob\CodeMatlabSimulation\UAV and Mobile end devices matlab code\results\results_single_agent\single_dynamic_ours\energy_1.xlsx', 'UAV1Energycount')
+% % save('C:\Users\tunji\Documents\GitHub\2020-Wimob\CodeMatlabSimulation\UAV and Mobile end devices matlab code\results\results_single_agent\single_dynamic_ours\coverage_1.xlsx', 'UAV1CoverageScorecount')
+% % save('C:\Users\tunji\Documents\GitHub\2020-Wimob\CodeMatlabSimulation\UAV and Mobile end devices matlab code\results\results_single_agent\single_dynamic_ours\geogArea_1.xlsx', 'UAV1GeoAreacount')
+
+% UAV1Energycount;
+% UAV1CoverageScorecount;
+% UAV1GeoAreacount;
+% 
+
+sum_eng_dyn = (UAV1Energycount+UAV2Energycount+UAV3Energycount+UAV4Energycount)
+save('eng_dyn_data_uneven_new.mat', 'sum_eng_dyn', 'UAV1Energycount', 'UAV2Energycount','UAV3Energycount', 'UAV4Energycount');
+
+
+
+ 
+semilogy(1:episodes, UAV1Energycount, 'b-', 1:episodes, UAV2Energycount, 'r-', 1:episodes, UAV3Energycount, 'k--', 1:episodes, UAV4Energycount, 'r--')
+%%%plot(1:200, 1:200, 'b-', 1:200, 1:200, 'r->', 1:200, 1:200, 'b-o', 1:200, 1:200, 'k-*')
+%%%set(gca, 'XTick', 0:20:100, 'YTick', 0:20:100);
+set(gca, 'FontSize', 18)
+%%%axis(gca,'square');
+legend('Agent-1', 'Agent-2','Agent-3', 'Agent-4', 'location', 'northeast');
+xlabel('Episodes','Fontsize',20);
+ylabel('Energy consumed (Joules)','Fontsize',20);
+grid on;
+% 
+% sum_geo_dyn = (UAV1GeoAreacount+UAV2GeoAreacount+UAV3GeoAreacount+UAV4GeoAreacount)
+% save('geo_dyn_data_uneven_new.mat', 'sum_geo_dyn', 'UAV1GeoAreacount', 'UAV2GeoAreacount','UAV3GeoAreacount', 'UAV4GeoAreacount');
+% 
+% 
+yyaxis left
+semilogy(1:episodes, fairfactor, 'b-')
+set(gca, 'FontSize', 18)
+xlabel('Episodes','Fontsize',20);
+ylabel('Geographical fairness','Fontsize',20);
+%grid on;
+
+yyaxis right
+plot(1:episodes, UAV1GeoAreacount+UAV2GeoAreacount+UAV3GeoAreacount+UAV4GeoAreacount, 'r-')
+set(gca, 'XTick', 0:10:100);
+set(gca, 'FontSize', 18)
+xlabel('Episodes','Fontsize',20)
+ylabel('Area covered (sq. km)','Fontsize',20)
+grid on;
+
+% %%%%yyaxis left
+% plot(1:episodes, UAV1GeoAreacount, 'b-*', 1:episodes, UAV2GeoAreacount, 'r--', 1:episodes, UAV3GeoAreacount, 'b--', 1:episodes, UAV4GeoAreacount, 'k--')
+% plot(1:episodes, UAV1GeoAreacount+UAV2GeoAreacount+UAV3GeoAreacount+UAV4GeoAreacount, 'r-')
+% 
+% set(gca, 'FontSize', 18)
+%   %%%axis(gca,'square');
+% xlabel('Episodes','Fontsize',20)
+% ylabel('Area covered (sq. km)','Fontsize',20)
+% %legend('Agent-1', 'Agent-2','Agent-3', 'Agent-4', 'location', 'southeast')
+% grid on;
+%%%%%%%%%%%%
+
+ sum_cov_dyn = (UAV1CoverageScorecount+UAV2CoverageScorecount+ UAV3CoverageScorecount+UAV4CoverageScorecount);
+ save('cov_dyn_data_uneven_new.mat', 'sum_cov_dyn', 'UAV1CoverageScorecount', 'UAV2CoverageScorecount','UAV3CoverageScorecount', 'UAV4CoverageScorecount');
+
+
+%%%%%%%
+%%plot(1:episodes, (UAV1CoverageScorecount+UAV2CoverageScorecount+ UAV3CoverageScorecount+UAV4CoverageScorecount)*100/400, 'k-')
+plot(1:episodes, UAV1CoverageScorecount, 'b-*', 1:episodes, UAV2CoverageScorecount, 'r-*', 1:episodes, UAV3CoverageScorecount, 'g-*', 1:episodes, UAV4CoverageScorecount, 'k-*')%, 1:episodes, 84*ones(1,episodes), 'r-')
+  set(gca, 'FontSize', 18)
+%set(gca, 'XTick', 0:10:100, 'YTick', 0:10:100);
+  %axis(gca,'square');
+ylabel('Coverage score (%)','Fontsize',20)
+xlabel('Episodes','Fontsize',20)
+legend('Agent-1', 'Agent-2','Agent-3', 'Agent-4', 'location', 'southeast')
+grid on;
+
+% %%%%%%%%%%%%%%%%%%%%%%%
+itercount1;
+rewardcount1;
+itercount2;
+rewardcount2;
+itercount3;
+rewardcount3;
+itercount4;
+rewardcount4;
+
+minVal = min(rewardcount1(:));
+maxVal = max(rewardcount1(:));
+minVal2 = min(rewardcount2(:));
+maxVal2 = max(rewardcount2(:));
+minVal3 = min(rewardcount3(:));
+maxVal3 = max(rewardcount3(:));
+minVal4 = min(rewardcount4(:));
+maxVal4 = max(rewardcount4(:));
+
+rewardcount1_ = (rewardcount1 - minVal) / ( maxVal - minVal ) ; %normdata
+rewardcount2_ = (rewardcount2 - minVal2) / ( maxVal2 - minVal2 ); 
+rewardcount3_ = (rewardcount3 - minVal3) / ( maxVal3 - minVal3 ) ;
+rewardcount4_ = (rewardcount4 - minVal4) / ( maxVal4 - minVal4 ) ;
+ 
+% 
+sum_rew_dyn = (rewardcount1_ + rewardcount2_ +  rewardcount3_ + rewardcount4_ )
+save('rew_dyn_data_uneven_new.mat', 'sum_rew_dyn', 'rewardcount1_', 'rewardcount2_','rewardcount3_', 'rewardcount4_');
+% 
+% 
+% %%%%%%%%yyaxis right
+%%%plot(1:episodes, sum_rew_dyn, 'r-')
+plot(1:episodes, rewardcount1_, 'r-', 1:episodes, rewardcount2_, 'b-', 1:episodes, rewardcount3_, 'r--', 1:episodes, rewardcount4_, 'k-')
+%%plot(1:episodes, rewardcount1, 'r-', 1:episodes, rewardcount2, 'b-', 1:episodes, rewardcount3, 'r--', 1:episodes, rewardcount4, 'k-')
+ 
+set(gca, 'FontSize', 18)
+  %%axis(gca,'square');
+xlabel('Episodes','Fontsize',20)
+ylabel('Norm. Accum. Reward','Fontsize',20)
+legend('Agent-1', 'Agent-2','Agent-3', 'Agent-4', 'location', 'best')
+grid on;
+% % 
+% % % % yyaxis left
+% % % % plot(1:episodes, itercount1, 'k-', 1:episodes, itercount1, 'k--')
+% % % % ylabel('Max. Iteration Reached/Episode')
+% % % % grid on;
