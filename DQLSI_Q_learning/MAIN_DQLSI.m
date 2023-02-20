@@ -18,6 +18,7 @@ runs_geo3 = [];
 runs_energy4 = [];
 runs_cov4 = [];
 runs_geo4 = [];
+terminal =150;
 
 for runs = 1:1
     xlabel('x (m)');
@@ -498,11 +499,9 @@ for runs = 1:1
             ave_ene_old4 = old_ene4/(1+iter);
             present_ave_ene4 =  obs4(4)/(2+iter);
             
-            if tot_obs_over > tot_oldConn_count 
-                Team_factor = 1;            
-            else 
-                Team_factor = -1;
-            end
+
+            
+            Team_factor = neighbourhood_Reward(tot_obs_over, tot_oldConn_count);
             Team_factor;
             
             maxobs1_5 = max(maxobs1_5, obs1(5));
@@ -520,47 +519,20 @@ for runs = 1:1
             %nooverlap12 = uav1seperationMatrix >= 400 || uav2seperationMatrix >=400;
             %overlap12 = uav1seperationMatrix <400 || uav2seperationMatrix <400;
             %% oldConn_count1 = obs_over(1);
-            if obs_over(1) < oldConn_count1 %&& obs1(7) == 0
-                reward1 = -1;
-            elseif obs_over(1) == oldConn_count1 %&& obs1(7) == 0
-                reward1 = 0;
-            else 
-                reward1 = 1;
-            end
+            
+            reward1 = self_Reward(obs_over(1), oldConn_count1);
             reward1 = reward1 + Team_factor + (ave_ene_old1 - present_ave_ene1)/(ave_ene_old1 + present_ave_ene1);
             
             %%%%%%%%%%%%%%%%%%%%%%%
-            if obs_over(2) < oldConn_count2 %&& obs2(7) == 0
-                reward2 = -1;
-            elseif obs_over(2) == oldConn_count2 %&& obs2(7) == 0
-                reward2 = 0;
-            else
-                reward2 = 1;
-%             else %if overlap12
-%                 reward2 = 0;%-5;
-            end
+            reward2 = self_Reward(obs_over(2), oldConn_count2);
             reward2 =  reward2 + Team_factor + (ave_ene_old2 - present_ave_ene2)/(ave_ene_old2 + present_ave_ene2);
             
             %%%%%%%%%%%%%%%%%%%%%%%
-            if obs_over(3) < oldConn_count3 % && obs3(7) == 0
-                reward3 = -1;
-            elseif obs_over(3) == oldConn_count3 %&& obs3(7) == 0
-                reward3 = 0;
-            else
-                reward3 = 1;
-%             else %if overlap12
-%                 reward2 = 0;%-5;
-            end
+            reward3 = self_Reward(obs_over(3), oldConn_count3);
             reward3 = reward3 + Team_factor + (ave_ene_old3 - present_ave_ene3)/(ave_ene_old3 + present_ave_ene3);
             
             %%%%%%%%%%%%%%%%%%%%%%%
-            if obs_over(4) < oldConn_count4 %&& obs4(7) == 0
-                reward4 = -1;
-            elseif obs_over(4) == oldConn_count4 %&& obs4(7) == 0
-                reward4 = 0;
-            else
-                reward4 = 1;             
-            end
+            reward4 = self_Reward(obs_over(4), oldConn_count4);
             reward4 = reward4 + Team_factor + (ave_ene_old4 - present_ave_ene4)/(ave_ene_old4 + present_ave_ene4);
             
             
@@ -763,22 +735,22 @@ for runs = 1:1
         %UAV4cover = max(obs_over(4), UAV4cover);
         
         if obs_over(1)>=150
-            UAV1cover =150;
+            UAV1cover =terminal;
         else
             UAV1cover = max(obs_over(1), UAV1cover);
         end
         if obs_over(2)>=150
-            UAV2cover =150;
+            UAV2cover =terminal;
         else
             UAV2cover = max(obs_over(2), UAV2cover);
         end
         if obs_over(3)>=150
-            UAV3cover =150;
+            UAV3cover =terminal;
         else
             UAV3cover = max(obs_over(3), UAV3cover);
         end
         if obs_over(4)>=150
-            UAV4cover =150;
+            UAV4cover =terminal;
         else
             UAV4cover = max(obs_over(4), UAV4cover);
         end
