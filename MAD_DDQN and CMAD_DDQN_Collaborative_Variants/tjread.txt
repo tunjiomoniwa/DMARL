@@ -1,0 +1,1439 @@
+Python 3.7.4 (tags/v3.7.4:e09359112e, Jul  8 2019, 20:34:20) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> 
+ RESTART: C:\Users\tunji\Documents\ActorCritic_UAVBS_4nodes_DDPG-master_MultiAgent_communication_Metrics\MultiUAVBS_Comm_ddpgTest_Mainv1.py 
+... saving checkpoint ...
+... saving checkpoint ...
+... saving checkpoint ...
+... saving checkpoint ...
+... saving checkpoint ...
+... saving checkpoint ...
+... saving checkpoint ...
+... saving checkpoint ...
+... saving checkpoint ...
+... saving checkpoint ...
+... saving checkpoint ...
+... saving checkpoint ...
+... saving checkpoint ...
+... saving checkpoint ...
+... saving checkpoint ...
+... saving checkpoint ...
+0.9960159362549801
+Episode:  0 Iteration:  1258
+Device Fairness:  0.8187528832467426
+UAV Load Fairness:  0.9739749850683344
+Total reward: [1691.8997321949175, 309.18802811386735, 1378.7691116307385, 874.0305244982286]
+UAV reached?  [False, True, False, False]
+Connected devices: [93, 81, 97, 62]
+Total Connected devices (/400): 333
+Energy Consumed: [2170080.995727134, 1878768.8776590044, 2144223.602853676, 2149292.874394234]
+Distance Covered: [24590, 18885, 23990, 24500]
+*******************************End of Epidode********************************
+0.9920318725099602
+Episode:  1 Iteration:  1500
+Device Fairness:  0.8272343462705277
+UAV Load Fairness:  0.8348582285881321
+Total reward: [206.44102906774356, -1001.4102071444695, -989.4019536952151, -513.5279539981658]
+UAV reached?  [False, False, False, False]
+Connected devices: [76, 42, 27, 94]
+Total Connected devices (/400): 239
+Energy Consumed: [2507804.0122241653, 2135112.74494642, 2276261.0041125584, 2162774.3436972364]
+Distance Covered: [27685, 23070, 22515, 22515]
+*******************************End of Epidode********************************
+0.9880478087649402
+Episode:  2 Iteration:  980
+Device Fairness:  0.7803267799102245
+UAV Load Fairness:  0.9844463213887791
+Total reward: [-16.28951415185793, -21.977767453010944, -189.99542803362192, 249.0840488903711]
+UAV reached?  [True, False, True, False]
+Connected devices: [91, 86, 89, 65]
+Total Connected devices (/400): 331
+Energy Consumed: [1383166.3058912125, 1687094.171712095, 1472230.3442234634, 1618635.927549218]
+Distance Covered: [14715, 19005, 14725, 17560]
+*******************************End of Epidode********************************
+0.9840637450199203
+Episode:  3 Iteration:  981
+Device Fairness:  0.7975295955019177
+UAV Load Fairness:  0.9671293187075591
+Total reward: [555.8206027107792, 502.77621786889677, -290.3094348770864, 393.34568199449626]
+UAV reached?  [False, False, False, True]
+Connected devices: [106, 73, 69, 74]
+Total Connected devices (/400): 322
+Energy Consumed: [1643811.216946742, 1613011.5145320783, 1616702.9740330556, 1426620.6974989928]
+Distance Covered: [18615, 17820, 17325, 14730]
+*******************************End of Epidode********************************
+0.9800796812749004
+Episode:  4 Iteration:  1500
+Device Fairness:  0.8344674834377792
+UAV Load Fairness:  0.9430301148711581
+Total reward: [515.5277851600122, 747.1956225500758, 509.59018682919316, 250.2509682086061]
+UAV reached?  [False, False, False, False]
+Connected devices: [52, 69, 94, 55]
+Total Connected devices (/400): 270
+Energy Consumed: [2422567.3080210574, 2477166.2734331214, 2155965.144072319, 2517765.953597294]
+Distance Covered: [25640, 27560, 22515, 28535]
+*******************************End of Epidode********************************
+0.9760956175298805
+Episode:  5 Iteration:  1500
+Device Fairness:  0.8158542349462471
+UAV Load Fairness:  0.9319459941977237
+Total reward: [-37.141624250587526, 83.80137010387638, -323.22139069879273, 740.0779721692494]
+UAV reached?  [False, False, False, False]
+Connected devices: [106, 62, 62, 59]
+Total Connected devices (/400): 289
+Energy Consumed: [2135537.54519756, 2554124.005596645, 2487185.173557063, 2311655.5381080117]
+Distance Covered: [22515, 28640, 28015, 24520]
+*******************************End of Epidode********************************
+0.9721115537848606
+Episode:  6 Iteration:  1073
+Device Fairness:  0.8164856494417052
+UAV Load Fairness:  0.9505251720391162
+Total reward: [1351.647523025536, 687.0668257127166, 902.9506563770451, 147.8342604493977]
+UAV reached?  [False, True, False, False]
+Connected devices: [98, 85, 91, 50]
+Total Connected devices (/400): 324
+Energy Consumed: [1865789.1567801817, 1556799.3384609215, 1863201.2217801816, 1786964.5345329407]
+Distance Covered: [21160, 16110, 21175, 20275]
+*******************************End of Epidode********************************
+0.9681274900398407
+Episode:  7 Iteration:  1500
+Device Fairness:  0.7661388047676778
+UAV Load Fairness:  0.7956900874798016
+Total reward: [320.51294460714024, -1264.128104104881, -1029.0683419461843, 229.88175333125835]
+UAV reached?  [False, False, False, False]
+Connected devices: [91, 31, 28, 89]
+Total Connected devices (/400): 239
+Energy Consumed: [2430053.638309178, 2566907.4424285716, 2449675.5509347497, 2217247.940696587]
+Distance Covered: [27320, 29250, 26930, 22515]
+*******************************End of Epidode********************************
+0.9641434262948207
+Episode:  8 Iteration:  1500
+Device Fairness:  0.8154280078798897
+UAV Load Fairness:  0.9511181561134435
+Total reward: [739.0682287219907, -933.6911434889495, -556.1849740780407, 412.5536034963402]
+UAV reached?  [False, False, False, False]
+Connected devices: [90, 92, 53, 63]
+Total Connected devices (/400): 298
+Energy Consumed: [2503306.866474002, 2169583.5433221585, 2469961.549725792, 2267640.2795681]
+Distance Covered: [27790, 22515, 27115, 23920]
+*******************************End of Epidode********************************
+0.9601593625498008
+Episode:  9 Iteration:  637
+Device Fairness:  0.8075787583591201
+UAV Load Fairness:  0.9583782878827337
+Total reward: [936.3426336918973, 515.0876664756228, 668.1510010112914, 235.20719918332958]
+UAV reached?  [False, True, False, False]
+Connected devices: [103, 75, 86, 57]
+Total Connected devices (/400): 321
+Energy Consumed: [1101208.2513671492, 902464.5232088243, 1046714.2908278897, 1100437.5667422304]
+Distance Covered: [12470, 9570, 11615, 12435]
+*******************************End of Epidode********************************
+0.9561752988047809
+Episode:  10 Iteration:  762
+Device Fairness:  0.8076308862042422
+UAV Load Fairness:  0.9522197072030959
+Total reward: [97.51989586851526, -13.464530140460983, 65.18102646850959, 318.0895019557151]
+UAV reached?  [True, False, False, False]
+Connected devices: [105, 83, 81, 54]
+Total Connected devices (/400): 323
+Energy Consumed: [1145653.3599932643, 1280568.6771937683, 1295919.6854857868, 1156661.8671165586]
+Distance Covered: [11445, 14465, 14205, 12210]
+*******************************End of Epidode********************************
+0.952191235059761
+Episode:  11 Iteration:  1365
+Device Fairness:  0.8370077073409201
+UAV Load Fairness:  0.9692040429564118
+Total reward: [-502.25028273753446, -416.1204223442991, -309.94929723880546, -11.616396186481733]
+UAV reached?  [True, False, False, False]
+Connected devices: [95, 79, 91, 58]
+Total Connected devices (/400): 323
+Energy Consumed: [1988922.3630789819, 2263604.940232778, 2007771.997493005, 2097698.680825253]
+Distance Covered: [20490, 25160, 21670, 21675]
+*******************************End of Epidode********************************
+0.9482071713147411
+Episode:  12 Iteration:  444
+Device Fairness:  0.7802718062559038
+UAV Load Fairness:  0.9591134463109598
+Total reward: [131.62347837321497, 307.1485087651517, 41.776848874287715, -115.41415864499982]
+UAV reached?  [False, False, True, False]
+Connected devices: [101, 74, 90, 57]
+Total Connected devices (/400): 322
+Energy Consumed: [683107.7142665812, 733663.6103483451, 632332.8958103876, 703309.0717247253]
+Distance Covered: [7420, 7890, 6675, 7395]
+*******************************End of Epidode********************************
+0.9442231075697212
+Episode:  13 Iteration:  1500
+Device Fairness:  0.796581541918038
+UAV Load Fairness:  0.9590323964814418
+Total reward: [1085.3615661917133, 678.5272515324922, 669.1801221998355, -728.4995702069991]
+UAV reached?  [False, False, False, False]
+Connected devices: [82, 94, 71, 52]
+Total Connected devices (/400): 299
+Energy Consumed: [2275849.2483591465, 2566999.4028036525, 2081063.9481982086, 2607974.243510336]
+Distance Covered: [24175, 29210, 22515, 29775]
+*******************************End of Epidode********************************
+0.9402390438247012
+Episode:  14 Iteration:  1241
+Device Fairness:  0.8580830054947224
+UAV Load Fairness:  0.9735800659582264
+Total reward: [1122.445723138374, 404.2394194394339, 626.9499508479578, 516.9305680297108]
+UAV reached?  [False, True, False, False]
+Connected devices: [99, 76, 88, 63]
+Total Connected devices (/400): 326
+Energy Consumed: [2028948.8074338015, 1786918.1846940217, 2074137.593723217, 2047905.040307254]
+Distance Covered: [22200, 18630, 23030, 22840]
+*******************************End of Epidode********************************
+0.9362549800796813
+Episode:  15 Iteration:  1366
+Device Fairness:  0.8387163645347526
+UAV Load Fairness:  0.9856273984505105
+Total reward: [881.0398285233044, -184.649123150001, 40.55771267144254, 652.7268771801218]
+UAV reached?  [False, True, False, False]
+Connected devices: [94, 79, 89, 68]
+Total Connected devices (/400): 330
+Energy Consumed: [2231148.1654271996, 2018758.3554369258, 2329536.147962553, 2142290.004971652]
+Distance Covered: [24010, 20505, 26505, 23170]
+*******************************End of Epidode********************************
+0.9322709163346614
+Episode:  16 Iteration:  1140
+Device Fairness:  0.8711726163642313
+UAV Load Fairness:  0.9625447033089128
+Total reward: [797.5250110552518, 233.55526909864514, 790.1095348179788, 926.9508787626417]
+UAV reached?  [False, True, False, False]
+Connected devices: [100, 74, 98, 61]
+Total Connected devices (/400): 333
+Energy Consumed: [1844485.758957718, 1710517.728090098, 1870639.3964963208, 1898937.398830523]
+Distance Covered: [19930, 17115, 21265, 20680]
+*******************************End of Epidode********************************
+0.9282868525896415
+Episode:  17 Iteration:  1500
+Device Fairness:  0.8324689353109206
+UAV Load Fairness:  0.9357395206722047
+Total reward: [659.6084644948241, 1346.2978413223739, 487.9340617064045, 447.9083269410814]
+UAV reached?  [False, False, False, False]
+Connected devices: [72, 79, 89, 40]
+Total Connected devices (/400): 280
+Energy Consumed: [2512102.5991398003, 2413777.3008108065, 2205899.274655061, 2461737.942850384]
+Distance Covered: [28160, 26625, 22515, 27360]
+*******************************End of Epidode********************************
+0.9243027888446216
+Episode:  18 Iteration:  1500
+Device Fairness:  0.8552039835107947
+UAV Load Fairness:  0.9613817394907684
+Total reward: [1064.246443913755, 360.3826321134335, 887.1326242504183, 311.3859906952228]
+UAV reached?  [False, False, False, False]
+Connected devices: [95, 57, 63, 74]
+Total Connected devices (/400): 289
+Energy Consumed: [2516281.54309827, 2203629.541446752, 2266926.553693991, 2549676.4995551137]
+Distance Covered: [28070, 22515, 23490, 28600]
+*******************************End of Epidode********************************
+0.9203187250996017
+Episode:  19 Iteration:  1500
+Device Fairness:  0.8125112489302427
+UAV Load Fairness:  0.9307046901873286
+Total reward: [80.49209910184443, 120.57980316769732, 326.97671742063005, 305.6377790847456]
+UAV reached?  [False, False, False, False]
+Connected devices: [103, 58, 54, 68]
+Total Connected devices (/400): 283
+Energy Consumed: [2158234.8772806237, 2241584.327860114, 2326044.6219827672, 2475667.2248497335]
+Distance Covered: [22515, 23900, 24555, 27595]
+*******************************End of Epidode********************************
+0.9163346613545817
+Episode:  20 Iteration:  968
+Device Fairness:  0.8284590607352574
+UAV Load Fairness:  0.9668328576194536
+Total reward: [199.9623183309411, 491.2557191804581, 378.8914316914256, 559.4103917151921]
+UAV reached?  [True, False, False, False]
+Connected devices: [91, 82, 94, 56]
+Total Connected devices (/400): 323
+Energy Consumed: [1456383.7071740895, 1641295.8391636934, 1500836.8104628643, 1621929.4441234611]
+Distance Covered: [14535, 18515, 15685, 17930]
+*******************************End of Epidode********************************
+0.9123505976095618
+Episode:  21 Iteration:  1181
+Device Fairness:  0.8335498506575018
+UAV Load Fairness:  0.9509512897962018
+Total reward: [839.7618972125724, 66.95414214787885, -586.4552956785309, 522.6451251957116]
+UAV reached?  [False, False, False, True]
+Connected devices: [115, 68, 73, 75]
+Total Connected devices (/400): 331
+Energy Consumed: [1802721.6813997836, 2023441.6967248807, 2038905.0289318888, 1764880.8124880297]
+Distance Covered: [19905, 22625, 23180, 17730]
+*******************************End of Epidode********************************
+0.9083665338645419
+Episode:  22 Iteration:  971
+Device Fairness:  0.7881458167991308
+UAV Load Fairness:  0.9570618003373715
+Total reward: [218.681165955307, 177.9158446570067, 413.889726776222, 954.6110399022799]
+UAV reached?  [True, False, False, False]
+Connected devices: [95, 83, 87, 51]
+Total Connected devices (/400): 316
+Energy Consumed: [1375661.6936249498, 1654848.7355710731, 1686441.0797371988, 1598559.4817832776]
+Distance Covered: [14580, 18895, 18975, 17340]
+*******************************End of Epidode********************************
+0.904382470119522
+Episode:  23 Iteration:  1029
+Device Fairness:  0.7854821180778796
+UAV Load Fairness:  0.950864630151596
+Total reward: [944.9377196471737, -351.754436965141, -491.27514826421657, 674.5453458303027]
+UAV reached?  [False, False, False, True]
+Connected devices: [110, 68, 67, 71]
+Total Connected devices (/400): 316
+Energy Consumed: [1735339.5293103675, 1759344.6701844747, 1778894.9859748706, 1490099.2060715721]
+Distance Covered: [19475, 19770, 20275, 15450]
+*******************************End of Epidode********************************
+0.9003984063745021
+Episode:  24 Iteration:  1500
+Device Fairness:  0.83682959102891
+UAV Load Fairness:  0.980227476686566
+Total reward: [1106.1456172269484, 1185.9099148704838, 473.4696417572787, 1169.271884239627]
+UAV reached?  [False, False, False, False]
+Connected devices: [98, 76, 68, 75]
+Total Connected devices (/400): 317
+Energy Consumed: [2203629.541446752, 2564326.8264707522, 2450453.55460185, 2542449.818721239]
+Distance Covered: [22515, 29015, 26715, 28905]
+*******************************End of Epidode********************************
+0.8964143426294822
+Episode:  25 Iteration:  1500
+Device Fairness:  0.8477229947769032
+UAV Load Fairness:  0.9569334076862308
+Total reward: [724.4114175577469, -629.557997083782, 301.0306754805113, 869.3511880637444]
+UAV reached?  [False, False, False, False]
+Connected devices: [93, 71, 50, 73]
+Total Connected devices (/400): 287
+Energy Consumed: [2187677.1311956113, 2219517.673904899, 2578037.1860956713, 2424708.4856433794]
+Distance Covered: [23160, 22515, 28975, 26930]
+*******************************End of Epidode********************************
+0.8924302788844622
+Episode:  26 Iteration:  1287
+Device Fairness:  0.7939725022877877
+UAV Load Fairness:  0.9703344570913582
+Total reward: [919.6477768186462, 170.25153233354965, -412.0642946671715, 365.1694777085996]
+UAV reached?  [False, False, False, True]
+Connected devices: [101, 77, 98, 65]
+Total Connected devices (/400): 341
+Energy Consumed: [2216410.887784322, 2033505.6523755132, 2098654.9166220957, 1897402.1693411106]
+Distance Covered: [24825, 22070, 23350, 19320]
+*******************************End of Epidode********************************
+0.8884462151394423
+Episode:  27 Iteration:  1500
+Device Fairness:  0.8402093646311644
+UAV Load Fairness:  0.8748171947706626
+Total reward: [1.5750541102767128, 597.4411423978931, 59.38565705414135, 50.86205329634816]
+UAV reached?  [False, False, False, False]
+Connected devices: [114, 66, 43, 58]
+Total Connected devices (/400): 281
+Energy Consumed: [2253563.6720294966, 2442257.6303085256, 2256793.736068422, 2394587.5074785547]
+Distance Covered: [22515, 27565, 23825, 26210]
+*******************************End of Epidode********************************
+0.8844621513944224
+Episode:  28 Iteration:  1500
+Device Fairness:  0.8315103384722867
+UAV Load Fairness:  0.9254146044976991
+Total reward: [1364.8308864743724, 826.8119106224077, -374.6502610757215, 969.9979818049579]
+UAV reached?  [False, False, False, False]
+Connected devices: [95, 85, 40, 72]
+Total Connected devices (/400): 292
+Energy Consumed: [2475475.9850573875, 2564821.6299704276, 2515433.5361826345, 2160504.6104889303]
+Distance Covered: [27925, 29170, 27575, 22515]
+*******************************End of Epidode********************************
+0.8804780876494025
+Episode:  29 Iteration:  1500
+Device Fairness:  0.8100515157780395
+UAV Load Fairness:  0.8406025711806925
+Total reward: [1581.09553849343, 348.2727970824534, 681.1558603964417, 726.417947712774]
+UAV reached?  [False, False, False, False]
+Connected devices: [99, 44, 39, 110]
+Total Connected devices (/400): 292
+Energy Consumed: [2543135.8620132576, 2489357.22093475, 2423711.5596018485, 2196820.341821835]
+Distance Covered: [28730, 26700, 26870, 22515]
+*******************************End of Epidode********************************
+0.8764940239043826
+Episode:  30 Iteration:  419
+Device Fairness:  0.7523366124756666
+UAV Load Fairness:  0.9242400623538581
+Total reward: [72.01489108047372, 454.70605833873384, 600.0138037677588, 177.59485145573368]
+UAV reached?  [True, False, False, False]
+Connected devices: [105, 87, 71, 45]
+Total Connected devices (/400): 308
+Energy Consumed: [596859.581061675, 678272.138308914, 677451.8139753642, 733720.7042232546]
+Distance Covered: [6300, 7170, 7280, 7980]
+*******************************End of Epidode********************************
+0.8725099601593627
+Episode:  31 Iteration:  878
+Device Fairness:  0.8385731897534457
+UAV Load Fairness:  0.9724458259963344
+Total reward: [124.02937549974115, 741.1883380433529, 344.80773158336325, 416.04829249152357]
+UAV reached?  [True, False, False, False]
+Connected devices: [91, 76, 99, 63]
+Total Connected devices (/400): 329
+Energy Consumed: [1256502.258054589, 1372419.0217151896, 1344751.697508837, 1510779.193460157]
+Distance Covered: [13185, 15460, 14660, 17105]
+*******************************End of Epidode********************************
+0.8685258964143427
+Episode:  32 Iteration:  1500
+Device Fairness:  0.7845686943354188
+UAV Load Fairness:  0.7910101637743553
+Total reward: [785.3829942897928, -168.13279656084418, -642.9479687287674, -25.738601278522577]
+UAV reached?  [False, False, False, False]
+Connected devices: [79, 25, 47, 116]
+Total Connected devices (/400): 267
+Energy Consumed: [2244484.7391962702, 2553430.643262446, 2552709.598346158, 2165044.076905542]
+Distance Covered: [22515, 29065, 28885, 22515]
+*******************************End of Epidode********************************
+0.8645418326693228
+Episode:  33 Iteration:  993
+Device Fairness:  0.8209266572019447
+UAV Load Fairness:  0.9615571382324377
+Total reward: [616.1861524510598, 525.7797324788968, 617.2045959484348, -204.21819770841563]
+UAV reached?  [True, False, False, False]
+Connected devices: [95, 86, 92, 54]
+Total Connected devices (/400): 327
+Energy Consumed: [1480508.3558812668, 1721647.0574523138, 1645820.5323718477, 1676818.7936210362]
+Distance Covered: [14910, 19485, 18530, 18745]
+*******************************End of Epidode********************************
+0.8605577689243029
+Episode:  34 Iteration:  1500
+Device Fairness:  0.8253027629830066
+UAV Load Fairness:  0.9098350349544837
+Total reward: [905.1367921130749, 467.0636864044371, 637.073041299406, 291.03243360627516]
+UAV reached?  [False, False, False, False]
+Connected devices: [52, 63, 103, 51]
+Total Connected devices (/400): 269
+Energy Consumed: [2568915.9325959957, 2414137.8232689486, 2224057.140321512, 2503073.306015207]
+Distance Covered: [28870, 26715, 22515, 28015]
+*******************************End of Epidode********************************
+0.856573705179283
+Episode:  35 Iteration:  1258
+Device Fairness:  0.8135306695233974
+UAV Load Fairness:  0.9670807889380221
+Total reward: [1034.6471011830724, 1192.423389359874, 1087.8071094879945, -91.52399625543721]
+UAV reached?  [True, False, False, False]
+Connected devices: [96, 83, 95, 58]
+Total Connected devices (/400): 332
+Energy Consumed: [1881038.610867306, 2174980.9846018907, 2173298.015268341, 2146704.9393942337]
+Distance Covered: [18885, 24680, 24795, 24515]
+*******************************End of Epidode********************************
+0.8525896414342631
+Episode:  36 Iteration:  934
+Device Fairness:  0.7965622740982843
+UAV Load Fairness:  0.9516487962775643
+Total reward: [1177.09421420981, 27.724018911991276, -521.1677011001696, 980.1183615443691]
+UAV reached?  [False, False, False, True]
+Connected devices: [114, 77, 83, 62]
+Total Connected devices (/400): 336
+Energy Consumed: [1600177.4831902483, 1605713.8756483924, 1624819.0276477435, 1374820.3156179076]
+Distance Covered: [18060, 18120, 18325, 14025]
+*******************************End of Epidode********************************
+0.8486055776892432
+Episode:  37 Iteration:  1500
+Device Fairness:  0.793140076206741
+UAV Load Fairness:  0.8240525831365801
+Total reward: [434.68134329464647, -459.6084357408174, -385.5799122620449, 74.30900052521223]
+UAV reached?  [False, False, False, False]
+Connected devices: [88, 45, 36, 118]
+Total Connected devices (/400): 287
+Energy Consumed: [2258497.068941884, 2608518.6867186427, 2216052.4558205283, 2205899.2746550576]
+Distance Covered: [24565, 29785, 23035, 22515]
+*******************************End of Epidode********************************
+0.8446215139442232
+Episode:  38 Iteration:  767
+Device Fairness:  0.8055765539221508
+UAV Load Fairness:  0.953483432455395
+Total reward: [272.0379268435604, 237.14533292913086, -368.03877516901264, 600.0473495115389]
+UAV reached?  [False, False, False, True]
+Connected devices: [112, 71, 88, 64]
+Total Connected devices (/400): 335
+Energy Consumed: [1209218.269864087, 1289569.6232768006, 1299101.038943251, 1135951.997201541]
+Distance Covered: [13095, 14550, 14600, 11520]
+*******************************End of Epidode********************************
+0.8406374501992033
+Episode:  39 Iteration:  1500
+Device Fairness:  0.8303106528670356
+UAV Load Fairness:  0.9339275500476645
+Total reward: [348.43437252962804, 591.5809630726326, 611.4690176911078, 881.661413602568]
+UAV reached?  [False, False, False, False]
+Connected devices: [114, 69, 68, 62]
+Total Connected devices (/400): 313
+Energy Consumed: [2165044.076905542, 2291603.0997757534, 2511013.712723188, 2603208.5356771112]
+Distance Covered: [22515, 24110, 28140, 29750]
+*******************************End of Epidode********************************
+0.8366533864541834
+Episode:  40 Iteration:  1288
+Device Fairness:  0.7994649944645006
+UAV Load Fairness:  0.9529851291607293
+Total reward: [-52.83447934834751, 24.823525134151033, 291.7732086944882, -517.9239702135812]
+UAV reached?  [False, False, True, False]
+Connected devices: [111, 74, 74, 64]
+Total Connected devices (/400): 323
+Energy Consumed: [1865883.7682396164, 2223761.151391454, 1902271.0964076843, 2084326.7313142386]
+Distance Covered: [20230, 25365, 19335, 23200]
+*******************************End of Epidode********************************
+0.8326693227091635
+Episode:  41 Iteration:  1500
+Device Fairness:  0.8226560569282462
+UAV Load Fairness:  0.850666453827121
+Total reward: [1721.6557609973656, -134.7072764581384, -575.1191986596026, 1080.684157322601]
+UAV reached?  [False, False, False, False]
+Connected devices: [98, 54, 33, 107]
+Total Connected devices (/400): 292
+Energy Consumed: [2552214.794846483, 2598852.990010661, 2605520.5895518675, 2167313.8101138505]
+Distance Covered: [28730, 29670, 29855, 22515]
+*******************************End of Epidode********************************
+0.8286852589641436
+Episode:  42 Iteration:  1073
+Device Fairness:  0.8261635517460553
+UAV Load Fairness:  0.9811462604959968
+Total reward: [405.1813457864173, 799.1022599297456, 266.09154326093903, 432.9949986986647]
+UAV reached?  [False, False, True, False]
+Connected devices: [98, 74, 70, 75]
+Total Connected devices (/400): 317
+Energy Consumed: [1691306.0870812996, 1859892.2418638938, 1599924.2694187406, 1790556.7146166528]
+Distance Covered: [17580, 21010, 16110, 20070]
+*******************************End of Epidode********************************
+0.8247011952191237
+Episode:  43 Iteration:  1500
+Device Fairness:  0.8162529046700263
+UAV Load Fairness:  0.9877176118765353
+Total reward: [1737.9929181198536, 949.6172521081269, 1013.4149498950887, 426.52209873313257]
+UAV reached?  [False, False, False, False]
+Connected devices: [75, 76, 62, 59]
+Total Connected devices (/400): 272
+Energy Consumed: [2558939.3531385013, 2555884.297220914, 2094682.3474480417, 2548821.173597295]
+Distance Covered: [28520, 28985, 22515, 28355]
+*******************************End of Epidode********************************
+0.8207171314741037
+Episode:  44 Iteration:  1500
+Device Fairness:  0.8304880702167703
+UAV Load Fairness:  0.9763873667430507
+Total reward: [1372.6202000835572, 1139.2898209597572, 648.5492919366523, 493.62247235122993]
+UAV reached?  [False, False, False, False]
+Connected devices: [75, 81, 72, 52]
+Total Connected devices (/400): 280
+Energy Consumed: [2589731.7365109855, 2404678.0044376706, 2151425.6776557043, 2511749.3957238398]
+Distance Covered: [29565, 25770, 22515, 27820]
+*******************************End of Epidode********************************
+0.8167330677290838
+Episode:  45 Iteration:  320
+Device Fairness:  0.7340044802967693
+UAV Load Fairness:  0.9092748183602493
+Total reward: [-244.61151501285883, 102.34529661228287, -258.2502861346321, -101.05865498378398]
+UAV reached?  [True, False, False, False]
+Connected devices: [109, 82, 94, 40]
+Total Connected devices (/400): 325
+Energy Consumed: [468914.1819666273, 524405.0685474176, 487333.2906739595, 475899.9832995276]
+Distance Covered: [4815, 5730, 5195, 4985]
+*******************************End of Epidode********************************
+0.8127490039840639
+Episode:  46 Iteration:  811
+Device Fairness:  0.8026170642124691
+UAV Load Fairness:  0.9382371636415001
+Total reward: [623.9347619856336, -304.3997857922971, 144.73061527440973, 247.6509947055309]
+UAV reached?  [False, False, True, False]
+Connected devices: [115, 73, 80, 58]
+Total Connected devices (/400): 326
+Energy Consumed: [1300495.6689179342, 1327230.3448757534, 1168606.131466294, 1225956.5890886134]
+Distance Covered: [14665, 14760, 12180, 13150]
+*******************************End of Epidode********************************
+0.808764940239044
+Episode:  47 Iteration:  1500
+Device Fairness:  0.8281790447695495
+UAV Load Fairness:  0.9126182160656123
+Total reward: [1176.6520645902126, 10.418003462912326, 1.7000681435529525, 1002.6395016086434]
+UAV reached?  [False, False, False, False]
+Connected devices: [100, 65, 43, 97]
+Total Connected devices (/400): 305
+Energy Consumed: [2403793.402311131, 2571673.1502617965, 2593542.8389691296, 2210438.7410716685]
+Distance Covered: [26525, 29275, 29635, 22515]
+*******************************End of Epidode********************************
+0.8047808764940241
+Episode:  48 Iteration:  1312
+Device Fairness:  0.8116131502946907
+UAV Load Fairness:  0.9787456445993031
+Total reward: [873.8738439326635, 265.63596961341557, 720.4614219662191, -259.2384525490926]
+UAV reached?  [False, False, True, False]
+Connected devices: [99, 68, 77, 74]
+Total Connected devices (/400): 318
+Energy Consumed: [2100302.7492072866, 2131321.373996379, 1887480.8199236945, 2217017.880074889]
+Distance Covered: [22395, 23465, 19695, 25310]
+*******************************End of Epidode********************************
+0.8007968127490042
+Episode:  49 Iteration:  964
+Device Fairness:  0.7796236618197758
+UAV Load Fairness:  0.9567728622671346
+Total reward: [648.2584462017344, 329.6751946740605, 308.024135313482, -219.1751921149031]
+UAV reached?  [False, False, True, False]
+Connected devices: [106, 77, 71, 61]
+Total Connected devices (/400): 315
+Energy Consumed: [1588546.4109843615, 1678775.0644373065, 1359737.0698253794, 1546560.0061517858]
+Distance Covered: [16885, 18980, 14475, 16760]
+*******************************End of Epidode********************************
+0.7968127490039842
+Episode:  50 Iteration:  1500
+Device Fairness:  0.8179226321422307
+UAV Load Fairness:  0.8662895712520201
+Total reward: [471.99194169802985, 1064.5360304482065, 501.38200086360007, -344.735890743804]
+UAV reached?  [False, False, False, False]
+Connected devices: [113, 58, 48, 51]
+Total Connected devices (/400): 270
+Energy Consumed: [2230866.339946433, 2284376.418941885, 2185471.6757803024, 2591046.864344211]
+Distance Covered: [22515, 24415, 22515, 29610]
+*******************************End of Epidode********************************
+0.7928286852589643
+Episode:  51 Iteration:  1500
+Device Fairness:  0.8256632780484287
+UAV Load Fairness:  0.9701892607544386
+Total reward: [538.6774012174726, 372.71057851983886, 409.80930386572004, -52.94634599105022]
+UAV reached?  [False, False, False, False]
+Connected devices: [86, 86, 73, 54]
+Total Connected devices (/400): 299
+Energy Consumed: [2605796.4706771113, 2230447.2651508404, 2162774.343697234, 2401008.502063236]
+Distance Covered: [29735, 24425, 22515, 25515]
+*******************************End of Epidode********************************
+0.7888446215139444
+Episode:  52 Iteration:  608
+Device Fairness:  0.7809364372138121
+UAV Load Fairness:  0.9570681739264633
+Total reward: [-230.70499418350823, -51.92525336031544, 321.01328392041285, 771.5797469149217]
+UAV reached?  [True, False, False, False]
+Connected devices: [102, 71, 85, 57]
+Total Connected devices (/400): 315
+Energy Consumed: [852054.966610427, 1043820.2124780342, 882282.5432346956, 1033207.2294371517]
+Distance Covered: [9135, 11615, 9315, 11295]
+*******************************End of Epidode********************************
+0.7848605577689245
+Episode:  53 Iteration:  1500
+Device Fairness:  0.7896525142451472
+UAV Load Fairness:  0.6984764542936288
+Total reward: [649.3010045801484, -267.2335196780204, -46.0079254317027, 580.0077124539525]
+UAV reached?  [False, False, False, False]
+Connected devices: [93, 13, 31, 109]
+Total Connected devices (/400): 246
+Energy Consumed: [2199090.0750301415, 2576538.1375122834, 2539451.721554464, 2208169.007863364]
+Distance Covered: [22515, 29010, 28975, 22515]
+*******************************End of Epidode********************************
+0.7808764940239046
+Episode:  54 Iteration:  1034
+Device Fairness:  0.8111400419371375
+UAV Load Fairness:  0.9706395883109723
+Total reward: [792.7906134536447, 1288.409884304831, 758.0009214988061, 401.1661334168815]
+UAV reached?  [True, False, False, False]
+Connected devices: [94, 82, 91, 58]
+Total Connected devices (/400): 325
+Energy Consumed: [1568917.4384037924, 1742473.5853096878, 1782041.3378080653, 1728728.2240604996]
+Distance Covered: [15525, 19755, 20315, 19440]
+*******************************End of Epidode********************************
+0.7768924302788847
+Episode:  55 Iteration:  1215
+Device Fairness:  0.8300652466625302
+UAV Load Fairness:  0.9491645838326429
+Total reward: [1053.8461309509507, 915.520835998902, 1405.6013349530938, 260.45940202735056]
+UAV reached?  [True, False, False, False]
+Connected devices: [94, 87, 101, 51]
+Total Connected devices (/400): 333
+Energy Consumed: [1762464.0753368805, 2092637.5390714598, 2020233.9114089077, 2099036.576529604]
+Distance Covered: [18240, 23825, 22245, 23880]
+*******************************End of Epidode********************************
+0.7729083665338647
+Episode:  56 Iteration:  1247
+Device Fairness:  0.7818132973955846
+UAV Load Fairness:  0.9711893909485698
+Total reward: [465.55332443875363, 985.1199612612893, 702.0915584984683, 405.2087620140818]
+UAV reached?  [False, False, True, False]
+Connected devices: [103, 73, 87, 66]
+Total Connected devices (/400): 329
+Energy Consumed: [2148341.3835775587, 1896773.6197157924, 1768467.3497190329, 2149706.1511194143]
+Distance Covered: [24530, 19555, 18720, 24430]
+*******************************End of Epidode********************************
+0.7689243027888448
+Episode:  57 Iteration:  1217
+Device Fairness:  0.8136682649395827
+UAV Load Fairness:  0.9904197420413032
+Total reward: [739.3515473965363, 427.53118473457937, 593.5345401895596, 741.2465462583242]
+UAV reached?  [True, False, False, False]
+Connected devices: [93, 74, 85, 74]
+Total Connected devices (/400): 326
+Energy Consumed: [1806247.9275946247, 2068252.0727892932, 2001178.9597081789, 1982789.1271695779]
+Distance Covered: [18270, 23395, 22705, 21325]
+*******************************End of Epidode********************************
+0.7649402390438249
+Episode:  58 Iteration:  1500
+Device Fairness:  0.8417737576856018
+UAV Load Fairness:  0.9404615049706118
+Total reward: [415.87156432685595, 809.4943363271801, 384.3084821687558, 1279.2796071818832]
+UAV reached?  [False, False, False, False]
+Connected devices: [113, 82, 65, 62]
+Total Connected devices (/400): 322
+Energy Consumed: [2251293.938821191, 2509012.541597944, 2523033.783972376, 2336804.9305629176]
+Distance Covered: [22515, 28270, 28465, 26045]
+*******************************End of Epidode********************************
+0.760956175298805
+Episode:  59 Iteration:  1096
+Device Fairness:  0.8014672256442883
+UAV Load Fairness:  0.954522020916188
+Total reward: [658.4247668073493, -10.083938147882787, -556.2102999047614, 217.24162759487103]
+UAV reached?  [False, False, False, True]
+Connected devices: [109, 67, 65, 81]
+Total Connected devices (/400): 322
+Energy Consumed: [1802108.9692341685, 1863086.6085644676, 1634950.2661997797, 1602962.3979512393]
+Distance Covered: [19550, 20670, 16980, 16455]
+*******************************End of Epidode********************************
+0.7569721115537851
+Episode:  60 Iteration:  1134
+Device Fairness:  0.8482466107051736
+UAV Load Fairness:  0.9373193520198965
+Total reward: [783.722783149975, 526.4817929546205, 325.75126675978095, 282.60420158187316]
+UAV reached?  [True, False, False, False]
+Connected devices: [92, 85, 108, 49]
+Total Connected devices (/400): 334
+Energy Consumed: [1717619.8970235577, 1861465.2279314036, 1965051.0375933058, 1796343.6462669054]
+Distance Covered: [17025, 20480, 22195, 19805]
+*******************************End of Epidode********************************
+0.7529880478087652
+Episode:  61 Iteration:  597
+Device Fairness:  0.780835741593814
+UAV Load Fairness:  0.9438202247191011
+Total reward: [335.5583729056046, -445.70945017427505, -69.44701889222144, 275.0732309920368]
+UAV reached?  [False, True, False, False]
+Connected devices: [98, 86, 102, 50]
+Total Connected devices (/400): 336
+Energy Consumed: [951578.8643738864, 900634.7632518971, 1009558.406537414, 920418.6395010832]
+Distance Covered: [10135, 8970, 11325, 9250]
+*******************************End of Epidode********************************
+0.7490039840637452
+Episode:  62 Iteration:  1500
+Device Fairness:  0.8213128372395341
+UAV Load Fairness:  0.9403218975010589
+Total reward: [-178.57587632778592, -88.25555058030899, -18.110429101303726, 403.01972097415677]
+UAV reached?  [False, False, False, False]
+Connected devices: [106, 65, 57, 70]
+Total Connected devices (/400): 298
+Energy Consumed: [2099221.8138646553, 2431666.6043941933, 2437464.239893217, 2389906.4409782304]
+Distance Covered: [22515, 26495, 26935, 26395]
+*******************************End of Epidode********************************
+0.7450199203187253
+Episode:  63 Iteration:  1500
+Device Fairness:  0.7941197360936247
+UAV Load Fairness:  0.9098588934274043
+Total reward: [1064.3407723269345, 86.62105820912191, -27.41215817736068, 669.7477327897818]
+UAV reached?  [False, False, False, False]
+Connected devices: [114, 66, 54, 63]
+Total Connected devices (/400): 297
+Energy Consumed: [2212708.4742799764, 2596540.9361359044, 2402238.988563561, 2375356.987066478]
+Distance Covered: [22515, 29565, 25350, 24085]
+*******************************End of Epidode********************************
+0.7410358565737054
+Episode:  64 Iteration:  259
+Device Fairness:  0.7659959060762964
+UAV Load Fairness:  0.9106587825032219
+Total reward: [258.12478114459344, 180.57563456921122, 162.8204894151701, 244.22616343436812]
+UAV reached?  [False, True, False, False]
+Connected devices: [106, 80, 85, 39]
+Total Connected devices (/400): 310
+Energy Consumed: [411581.74723526696, 378455.3528614845, 406681.7583605104, 458905.9856914635]
+Distance Covered: [4300, 3900, 4210, 5065]
+*******************************End of Epidode********************************
+0.7370517928286855
+Episode:  65 Iteration:  1500
+Device Fairness:  0.7636483927052776
+UAV Load Fairness:  0.8999394031207393
+Total reward: [166.53281531395464, -728.0495538677643, -644.0251547887743, 192.08302395756644]
+UAV reached?  [False, False, False, False]
+Connected devices: [58, 45, 33, 82]
+Total Connected devices (/400): 218
+Energy Consumed: [2201359.808238444, 2543948.8673046264, 2169583.5433221543, 2226326.873529817]
+Distance Covered: [22515, 28870, 22515, 22515]
+*******************************End of Epidode********************************
+0.7330677290836656
+Episode:  66 Iteration:  604
+Device Fairness:  0.7809093724469055
+UAV Load Fairness:  0.9588073651415969
+Total reward: [523.1647070035235, -11.729209511313982, 351.5792951063757, 157.65473119453802]
+UAV reached?  [False, False, False, True]
+Connected devices: [109, 69, 87, 66]
+Total Connected devices (/400): 331
+Energy Consumed: [1011461.7879625494, 996125.4177548925, 905521.6037594454, 837118.7247607437]
+Distance Covered: [11235, 10995, 9310, 9075]
+*******************************End of Epidode********************************
+0.7290836653386457
+Episode:  67 Iteration:  1500
+Device Fairness:  0.8406432553485366
+UAV Load Fairness:  0.8582860801170661
+Total reward: [1001.3749183264091, 1712.1094091584046, 997.4673172167852, -441.77151984643933]
+UAV reached?  [False, False, False, False]
+Connected devices: [47, 65, 115, 47]
+Total Connected devices (/400): 274
+Energy Consumed: [2473255.8915577135, 2322253.883064537, 2224057.140321512, 2605619.8689691294]
+Distance Covered: [27780, 25340, 22515, 29565]
+*******************************End of Epidode********************************
+0.7250996015936257
+Episode:  68 Iteration:  1500
+Device Fairness:  0.8189953853128378
+UAV Load Fairness:  0.9834270226862076
+Total reward: [-969.3166720374152, -1471.1336547275666, -793.2606988811029, -522.4181293903422]
+UAV reached?  [False, False, False, False]
+Connected devices: [86, 90, 65, 72]
+Total Connected devices (/400): 313
+Energy Consumed: [2121919.145947722, 2208169.007863363, 2345898.5014805007, 2272095.10465181]
+Distance Covered: [22515, 22515, 25545, 23710]
+*******************************End of Epidode********************************
+0.7211155378486058
+Episode:  69 Iteration:  1500
+Device Fairness:  0.798365864708881
+UAV Load Fairness:  0.9751186030079741
+Total reward: [-312.0027962016591, 7.06914485363622, -296.3192259341633, -688.1713591849392]
+UAV reached?  [False, False, False, False]
+Connected devices: [85, 72, 54, 67]
+Total Connected devices (/400): 278
+Energy Consumed: [2137807.2784058615, 2309157.9698964683, 2309131.8809010005, 2569778.5775959957]
+Distance Covered: [22515, 26100, 23890, 28865]
+*******************************End of Epidode********************************
+0.7171314741035859
+Episode:  70 Iteration:  1500
+Device Fairness:  0.8176556553433163
+UAV Load Fairness:  0.954522020916188
+Total reward: [312.7434871037348, 722.2126182873352, 316.00880076176554, 1239.549614793888]
+UAV reached?  [False, False, False, False]
+Connected devices: [110, 72, 76, 64]
+Total Connected devices (/400): 322
+Energy Consumed: [2110570.479906187, 2441615.5012695985, 2470038.872016508, 2535831.8588886634]
+Distance Covered: [22515, 26240, 27575, 28575]
+*******************************End of Epidode********************************
+0.713147410358566
+Episode:  71 Iteration:  401
+Device Fairness:  0.7681550644232451
+UAV Load Fairness:  0.9437155627480446
+Total reward: [673.2495545112962, 451.64141796018924, 416.014314954953, 130.4056898154082]
+UAV reached?  [False, True, False, False]
+Connected devices: [101, 82, 82, 48]
+Total Connected devices (/400): 313
+Energy Consumed: [691884.8433578231, 604547.6886122071, 579530.9836122056, 698778.6843156422]
+Distance Covered: [7655, 6030, 6175, 7865]
+*******************************End of Epidode********************************
+0.7091633466135461
+Episode:  72 Iteration:  787
+Device Fairness:  0.819659569999655
+UAV Load Fairness:  0.9668625789826679
+Total reward: [600.7181603461636, -260.2930981364902, 155.22765912767477, 291.3648835155574]
+UAV reached?  [False, False, False, True]
+Connected devices: [103, 82, 86, 60]
+Total Connected devices (/400): 331
+Energy Consumed: [1305973.452109904, 1264899.331985959, 1247188.2236971946, 1165238.5422838319]
+Distance Covered: [14530, 14255, 12950, 11820]
+*******************************End of Epidode********************************
+0.7051792828685262
+Episode:  73 Iteration:  1050
+Device Fairness:  0.8356263829870255
+UAV Load Fairness:  0.966195951012247
+Total reward: [61.27515892577591, -154.68194517194422, 488.7593576031372, 67.50509932652845]
+UAV reached?  [True, False, False, False]
+Connected devices: [91, 81, 99, 58]
+Total Connected devices (/400): 329
+Energy Consumed: [1558300.6763450298, 1608919.256633162, 1579335.402634458, 1781104.9105416466]
+Distance Covered: [15765, 17195, 16735, 20170]
+*******************************End of Epidode********************************
+0.7011952191235062
+Episode:  74 Iteration:  1500
+Device Fairness:  0.8330739424264394
+UAV Load Fairness:  0.9821453725876884
+Total reward: [1615.066594945522, 551.3994467711826, 9.753712750929008, 1073.7634130084944]
+UAV reached?  [False, False, False, False]
+Connected devices: [101, 77, 85, 71]
+Total Connected devices (/400): 334
+Energy Consumed: [2600578.280010661, 2575123.7302617966, 2466687.5714337714, 2174123.0097387647]
+Distance Covered: [29660, 29255, 27305, 22515]
+*******************************End of Epidode********************************
+0.6972111553784863
+Episode:  75 Iteration:  1180
+Device Fairness:  0.8503484645145146
+UAV Load Fairness:  0.9537709177045923
+Total reward: [880.3655633799457, 204.8122808729961, 223.03030517274854, 267.3523305884238]
+UAV reached?  [False, False, True, False]
+Connected devices: [108, 71, 75, 62]
+Total Connected devices (/400): 316
+Energy Consumed: [1966716.3838276807, 1870526.5376654624, 1762281.6186297606, 1870059.416747872]
+Distance Covered: [21595, 19995, 17715, 20445]
+*******************************End of Epidode********************************
+0.6932270916334664
+Episode:  76 Iteration:  1500
+Device Fairness:  0.7723171973924371
+UAV Load Fairness:  0.8661690215942416
+Total reward: [-400.06290891732596, -765.7453323519529, -343.2664194461635, 67.7043061987349]
+UAV reached?  [False, False, False, False]
+Connected devices: [65, 23, 55, 85]
+Total Connected devices (/400): 228
+Energy Consumed: [2165044.076905542, 2608652.967760174, 2178662.4761553816, 2162774.343697235]
+Distance Covered: [22515, 29850, 22515, 22515]
+*******************************End of Epidode********************************
+0.6892430278884465
+Episode:  77 Iteration:  1500
+Device Fairness:  0.8240402354202327
+UAV Load Fairness:  0.9056840454723638
+Total reward: [577.4693550631673, 62.476954668703286, -561.2973961764148, 1181.4002248884117]
+UAV reached?  [False, False, False, False]
+Connected devices: [116, 73, 50, 65]
+Total Connected devices (/400): 304
+Energy Consumed: [2169583.5433221534, 2610838.0596355796, 2523712.5082222135, 2325266.6183156697]
+Distance Covered: [22515, 29640, 28540, 24770]
+*******************************End of Epidode********************************
+0.6852589641434266
+Episode:  78 Iteration:  590
+Device Fairness:  0.8167689067664131
+UAV Load Fairness:  0.9409345406787862
+Total reward: [239.27727235451266, 497.46614087376, -261.8341147581475, 45.84036712354522]
+UAV reached?  [False, False, False, True]
+Connected devices: [108, 75, 94, 53]
+Total Connected devices (/400): 330
+Energy Consumed: [924489.4952829492, 892692.8668267595, 935562.2801992366, 848394.4081194277]
+Distance Covered: [9950, 9095, 10070, 8865]
+*******************************End of Epidode********************************
+0.6812749003984067
+Episode:  79 Iteration:  777
+Device Fairness:  0.8541804184035625
+UAV Load Fairness:  0.951323509346432
+Total reward: [420.10412640032547, -142.66605045106513, 180.43361907414146, 95.3450428277366]
+UAV reached?  [False, True, False, False]
+Connected devices: [96, 86, 100, 52]
+Total Connected devices (/400): 334
+Energy Consumed: [1289251.686152795, 1171022.8686174417, 1197628.9889892708, 1204509.7854493696]
+Distance Covered: [14050, 11670, 13055, 12160]
+*******************************End of Epidode********************************
+0.6772908366533867
+Episode:  80 Iteration:  1500
+Device Fairness:  0.8526388800056317
+UAV Load Fairness:  0.8281167162840015
+Total reward: [1083.324694476786, 1239.944853700084, 1275.4941510728452, 55.94148284638896]
+UAV reached?  [False, False, False, False]
+Connected devices: [126, 60, 41, 58]
+Total Connected devices (/400): 285
+Energy Consumed: [2203629.541446758, 2538561.393972376, 2557383.345804302, 2563973.6230547894]
+Distance Covered: [22515, 28375, 28950, 28675]
+*******************************End of Epidode********************************
+0.6733067729083668
+Episode:  81 Iteration:  485
+Device Fairness:  0.7772792511192232
+UAV Load Fairness:  0.9403600299134646
+Total reward: [216.8216063795268, 762.4888539868631, 189.5663270663512, 126.98621976913189]
+UAV reached?  [True, False, False, False]
+Connected devices: [102, 82, 93, 48]
+Total Connected devices (/400): 325
+Energy Consumed: [713932.7787079965, 781535.6969130522, 834530.6088689242, 777759.5960791776]
+Distance Covered: [7290, 8490, 9380, 8775]
+*******************************End of Epidode********************************
+0.6693227091633469
+Episode:  82 Iteration:  1500
+Device Fairness:  0.8154421711077341
+UAV Load Fairness:  0.9526955061242882
+Total reward: [342.6910688259732, -518.2087582002886, 314.3102147086703, 424.71040888731517]
+UAV reached?  [False, False, False, False]
+Connected devices: [89, 97, 60, 59]
+Total Connected devices (/400): 305
+Energy Consumed: [2597261.9810521924, 2169583.54332216, 2297119.1286939904, 2415671.8734766035]
+Distance Covered: [29745, 22515, 23315, 27035]
+*******************************End of Epidode********************************
+0.665338645418327
+Episode:  83 Iteration:  840
+Device Fairness:  0.8009501429034563
+UAV Load Fairness:  0.9711684370257967
+Total reward: [722.8663989543271, 901.8580692925492, 686.0150828295665, -323.9324058308746]
+UAV reached?  [False, False, True, False]
+Connected devices: [102, 76, 78, 64]
+Total Connected devices (/400): 320
+Energy Consumed: [1431865.299930344, 1451960.0589290464, 1223555.154481299, 1427276.1938051009]
+Distance Covered: [15920, 16435, 12615, 16065]
+*******************************End of Epidode********************************
+0.6613545816733071
+Episode:  84 Iteration:  1500
+Device Fairness:  0.7731576251221328
+UAV Load Fairness:  0.9542567485037254
+Total reward: [813.9222785939621, 952.5102287885293, 786.9171434480793, -54.002171230712975]
+UAV reached?  [False, False, False, False]
+Connected devices: [67, 56, 82, 45]
+Total Connected devices (/400): 250
+Energy Consumed: [2155965.144072318, 2585694.392636229, 2158234.877280624, 2558062.0700541395]
+Distance Covered: [22515, 29470, 22515, 29025]
+*******************************End of Epidode********************************
+0.6573705179282872
+Episode:  85 Iteration:  741
+Device Fairness:  0.8287740557815441
+UAV Load Fairness:  0.9413940884806088
+Total reward: [512.6405469832825, 735.9871081896678, 116.72516370368247, 268.0773321561638]
+UAV reached?  [False, False, False, True]
+Connected devices: [112, 68, 68, 65]
+Total Connected devices (/400): 313
+Energy Consumed: [1259855.0025867587, 1130588.4017593858, 1130411.8000514056, 1109228.1546360909]
+Distance Covered: [13980, 11835, 11665, 11130]
+*******************************End of Epidode********************************
+0.6533864541832672
+Episode:  86 Iteration:  965
+Device Fairness:  0.7684300978605375
+UAV Load Fairness:  0.9612893032074578
+Total reward: [998.4310018306765, 244.88982718120076, 627.3081286173273, -247.02536916173352]
+UAV reached?  [False, False, True, False]
+Connected devices: [105, 69, 71, 67]
+Total Connected devices (/400): 312
+Energy Consumed: [1604734.7279237392, 1508233.999012006, 1425888.7935162229, 1665167.9240457364]
+Distance Covered: [17900, 16065, 14490, 19010]
+*******************************End of Epidode********************************
+0.6494023904382473
+Episode:  87 Iteration:  1500
+Device Fairness:  0.7969524958735967
+UAV Load Fairness:  0.9650695875204979
+Total reward: [1696.6013471352644, 1684.3006323173158, 1178.4396660241491, 216.61852468140395]
+UAV reached?  [False, False, False, False]
+Connected devices: [87, 93, 62, 61]
+Total Connected devices (/400): 303
+Energy Consumed: [2590007.617636229, 2570139.1000541397, 2244484.739196266, 2610378.2577601736]
+Distance Covered: [29445, 28955, 22515, 29840]
+*******************************End of Epidode********************************
+0.6454183266932274
+Episode:  88 Iteration:  905
+Device Fairness:  0.7950543796288196
+UAV Load Fairness:  0.9456437662611631
+Total reward: [500.2291180915981, -566.0783069935416, 239.69264940171735, 341.5410530134599]
+UAV reached?  [False, False, False, True]
+Connected devices: [111, 62, 89, 66]
+Total Connected devices (/400): 328
+Energy Consumed: [1472054.1478877703, 1540788.27317589, 1480305.4373452626, 1308522.6265613677]
+Distance Covered: [16010, 17335, 16370, 13590]
+*******************************End of Epidode********************************
+0.6414342629482075
+Episode:  89 Iteration:  1068
+Device Fairness:  0.8284724582973979
+UAV Load Fairness:  0.9437687555163283
+Total reward: [206.49785213216185, 570.8490148759284, 144.00246273878957, 117.39369341397305]
+UAV reached?  [False, False, True, False]
+Connected devices: [114, 69, 82, 62]
+Total Connected devices (/400): 327
+Energy Consumed: [1711237.953329218, 1559450.6221267537, 1589198.033335705, 1794799.0072409527]
+Distance Covered: [18485, 16510, 16035, 20395]
+*******************************End of Epidode********************************
+0.6374501992031876
+Episode:  90 Iteration:  720
+Device Fairness:  0.7517907238113964
+UAV Load Fairness:  0.9666335201591032
+Total reward: [1175.1429243497475, -156.45884424161548, -17.319192610754524, 304.55023898465606]
+UAV reached?  [False, False, False, True]
+Connected devices: [103, 65, 89, 70]
+Total Connected devices (/400): 327
+Energy Consumed: [1248290.2640615138, 1142449.3592756682, 1249244.8694365951, 1022868.8186961843]
+Distance Covered: [14205, 11990, 14160, 10815]
+*******************************End of Epidode********************************
+0.6334661354581677
+Episode:  91 Iteration:  1091
+Device Fairness:  0.8150113707830637
+UAV Load Fairness:  0.9602168032304857
+Total reward: [230.45860212457387, 175.90916554012145, -497.1225947232433, 374.02393463825234]
+UAV reached?  [False, False, False, True]
+Connected devices: [105, 72, 63, 73]
+Total Connected devices (/400): 313
+Energy Consumed: [1764945.8954451089, 1693679.2003211637, 1829344.8386066786, 1626282.1599928015]
+Distance Covered: [18510, 18410, 20610, 16380]
+*******************************End of Epidode********************************
+0.6294820717131477
+Episode:  92 Iteration:  1500
+Device Fairness:  0.8161289559394674
+UAV Load Fairness:  0.93737000231107
+Total reward: [184.06518702313264, -308.77587952299996, -1150.8525397540013, 176.81357141219527]
+UAV reached?  [False, False, False, False]
+Connected devices: [96, 55, 61, 100]
+Total Connected devices (/400): 312
+Energy Consumed: [2311563.5777329276, 2439373.45064338, 2512830.9630982694, 2126458.6123643327]
+Distance Covered: [24560, 26845, 28090, 22515]
+*******************************End of Epidode********************************
+0.6254980079681278
+Episode:  93 Iteration:  1259
+Device Fairness:  0.782969178684914
+UAV Load Fairness:  0.9793074475311953
+Total reward: [116.0896052350967, -276.4611860721194, 211.63896917484982, -104.20373126599664]
+UAV reached?  [False, True, False, False]
+Connected devices: [100, 83, 82, 66]
+Total Connected devices (/400): 331
+Energy Consumed: [1980922.262759978, 1717947.2805192186, 1887984.4377632234, 2182614.4483764465]
+Distance Covered: [21875, 18900, 20835, 24850]
+*******************************End of Epidode********************************
+0.6215139442231079
+Episode:  94 Iteration:  1500
+Device Fairness:  0.7944424813292535
+UAV Load Fairness:  0.9272610818388359
+Total reward: [536.9016581331837, 1232.708467886013, 584.132547248289, -206.9397152734894]
+UAV reached?  [False, False, False, False]
+Connected devices: [57, 75, 98, 47]
+Total Connected devices (/400): 277
+Energy Consumed: [2516522.422599247, 2315225.761065183, 2140077.0116141713, 2572719.7160119587]
+Distance Covered: [27595, 25065, 22515, 29190]
+*******************************End of Epidode********************************
+0.617529880478088
+Episode:  95 Iteration:  682
+Device Fairness:  0.7914326848607768
+UAV Load Fairness:  0.9454539290799376
+Total reward: [621.8785728210421, 396.750138279179, 62.101872966642475, 373.0105524428754]
+UAV reached?  [False, False, False, True]
+Connected devices: [105, 65, 102, 62]
+Total Connected devices (/400): 334
+Energy Consumed: [1078496.6754110062, 1041524.1769548166, 1166286.3129898459, 1035316.3792890174]
+Distance Covered: [11455, 10630, 13130, 10245]
+*******************************End of Epidode********************************
+0.6135458167330681
+Episode:  96 Iteration:  1107
+Device Fairness:  0.8493365979765477
+UAV Load Fairness:  0.9588910783447714
+Total reward: [739.7111671696463, 506.06142093668507, 954.3815773950363, 325.0359448671772]
+UAV reached?  [True, False, False, False]
+Connected devices: [97, 86, 98, 55]
+Total Connected devices (/400): 336
+Energy Consumed: [1633823.2636004894, 1832057.550174788, 1788890.2985505178, 1871879.2266718624]
+Distance Covered: [16620, 19865, 19760, 21055]
+*******************************End of Epidode********************************
+0.6095617529880482
+Episode:  97 Iteration:  1500
+Device Fairness:  0.8140939233628314
+UAV Load Fairness:  0.9904255319148936
+Total reward: [772.7413216426551, 426.22302509236795, 164.84804472417792, 904.8088502735918]
+UAV reached?  [False, False, False, False]
+Connected devices: [64, 58, 68, 76]
+Total Connected devices (/400): 266
+Energy Consumed: [2413587.654605095, 2377009.0866446802, 2271721.5376959518, 2495853.944223513]
+Distance Covered: [25350, 26575, 22515, 28070]
+*******************************End of Epidode********************************
+0.6055776892430282
+Episode:  98 Iteration:  1458
+Device Fairness:  0.7949480882655273
+UAV Load Fairness:  0.9602817310485042
+Total reward: [312.8735910304802, 176.00849409948395, -951.0891862081518, 136.51638522165388]
+UAV reached?  [False, False, False, True]
+Connected devices: [105, 81, 99, 60]
+Total Connected devices (/400): 345
+Energy Consumed: [2358950.474721379, 2359410.276596787, 2352176.276720728, 2248805.257564339]
+Distance Covered: [25930, 25730, 26285, 21885]
+*******************************End of Epidode********************************
+0.6015936254980083
+Episode:  99 Iteration:  1024
+Device Fairness:  0.7862672817278936
+UAV Load Fairness:  0.9571408779638206
+Total reward: [-31.982557677630336, -449.7067614625072, 66.33689175258996, 71.53525880206168]
+UAV reached?  [False, False, True, False]
+Connected devices: [106, 69, 65, 71]
+Total Connected devices (/400): 311
+Energy Consumed: [1531681.8386523987, 1727887.271519354, 1513418.9681131335, 1618277.584941822]
+Distance Covered: [16440, 19210, 15375, 17030]
+*******************************End of Epidode********************************
+0.5976095617529884
+Episode:  100 Iteration:  1478
+Device Fairness:  0.8077911672625208
+UAV Load Fairness:  0.9274908168288711
+Total reward: [329.8683973241273, -966.4508542929236, -1304.400785156731, 566.8470630002614]
+UAV reached?  [False, False, False, True]
+Connected devices: [114, 69, 55, 75]
+Total Connected devices (/400): 313
+Energy Consumed: [2422961.742178104, 2366176.091303996, 2501665.12788153, 2137368.34373163]
+Distance Covered: [26305, 26200, 28230, 22185]
+*******************************End of Epidode********************************
+0.5936254980079685
+Episode:  101 Iteration:  900
+Device Fairness:  0.7890859598896502
+UAV Load Fairness:  0.9749218812595145
+Total reward: [418.05930445705457, 14.634969788626238, 118.64043448996944, -370.5653700219662]
+UAV reached?  [False, False, True, False]
+Connected devices: [97, 80, 72, 63]
+Total Connected devices (/400): 312
+Energy Consumed: [1416626.609972813, 1475349.154179168, 1286447.724436807, 1490720.5260110938]
+Distance Covered: [15510, 16130, 13515, 16725]
+*******************************End of Epidode********************************
+0.5896414342629486
+Episode:  102 Iteration:  1375
+Device Fairness:  0.8559838658333052
+UAV Load Fairness:  0.9748896065379292
+Total reward: [1109.507374607026, 722.2350567925927, 1156.699227619715, 444.0966990049276]
+UAV reached?  [False, True, False, False]
+Connected devices: [95, 81, 102, 66]
+Total Connected devices (/400): 344
+Energy Consumed: [1986482.0182859318, 2008105.1020367395, 2337140.03964608, 2393225.0091438084]
+Distance Covered: [21160, 20640, 26350, 27130]
+*******************************End of Epidode********************************
+0.5856573705179287
+Episode:  103 Iteration:  1500
+Device Fairness:  0.8255792463550375
+UAV Load Fairness:  0.9230003619254433
+Total reward: [1367.5932856021066, 68.41292554421398, -530.649235894196, 345.30655545064593]
+UAV reached?  [False, False, False, False]
+Connected devices: [105, 69, 45, 84]
+Total Connected devices (/400): 303
+Energy Consumed: [2523988.389347457, 2400598.339896463, 2480843.094849733, 2171853.2765304637]
+Distance Covered: [28420, 25570, 27565, 22515]
+*******************************End of Epidode********************************
+0.5816733067729087
+Episode:  104 Iteration:  1500
+Device Fairness:  0.8341358080351807
+UAV Load Fairness:  0.9706189481678374
+Total reward: [569.7926181744713, 355.7794750569068, 209.27360682751276, -25.761468514249177]
+UAV reached?  [False, False, False, False]
+Connected devices: [80, 86, 54, 66]
+Total Connected devices (/400): 286
+Energy Consumed: [2428258.3450606447, 2228596.6067381264, 2443793.274102823, 2409958.8793104794]
+Distance Covered: [26620, 22515, 26280, 26805]
+*******************************End of Epidode********************************
+0.5776892430278888
+Episode:  105 Iteration:  1051
+Device Fairness:  0.7726141025464671
+UAV Load Fairness:  0.9546450332032587
+Total reward: [341.1415817715348, -368.0549485600062, 552.3258747590861, 796.7560622084686]
+UAV reached?  [False, True, False, False]
+Connected devices: [104, 82, 93, 55]
+Total Connected devices (/400): 334
+Energy Consumed: [1613589.6248652101, 1520044.6724537865, 1755895.1801098443, 1802851.5770657158]
+Distance Covered: [17790, 15780, 19570, 20495]
+*******************************End of Epidode********************************
+0.5737051792828689
+Episode:  106 Iteration:  831
+Device Fairness:  0.7574044132790133
+UAV Load Fairness:  0.9600708246007083
+Total reward: [1077.6637484901987, -375.12736197652595, -406.7570778769241, -61.52888006133344]
+UAV reached?  [False, False, False, True]
+Connected devices: [105, 61, 88, 72]
+Total Connected devices (/400): 326
+Energy Consumed: [1401295.5140806916, 1161619.2658821356, 1400666.4295394844, 1168386.144840604]
+Distance Covered: [15945, 12585, 15725, 12480]
+*******************************End of Epidode********************************
+0.569721115537849
+Episode:  107 Iteration:  1500
+Device Fairness:  0.8118941040742351
+UAV Load Fairness:  0.8070644718792866
+Total reward: [1344.8561517983037, -393.6172209942457, -159.8364863802499, 327.33953206388685]
+UAV reached?  [False, False, False, False]
+Connected devices: [92, 37, 39, 119]
+Total Connected devices (/400): 287
+Energy Consumed: [2582116.8506368776, 2286320.63131632, 2437230.679434422, 2135537.5451975567]
+Distance Covered: [29175, 24680, 27160, 22515]
+*******************************End of Epidode********************************
+0.5657370517928291
+Episode:  108 Iteration:  1301
+Device Fairness:  0.8044883834885364
+UAV Load Fairness:  0.9774301675977654
+Total reward: [1109.8445885650133, -386.8923024939293, -530.7467101392486, 809.8310879042153]
+UAV reached?  [False, False, False, True]
+Connected devices: [102, 77, 71, 74]
+Total Connected devices (/400): 324
+Energy Consumed: [2154233.423970093, 2220570.854050557, 2232774.8460499076, 1917902.7508987132]
+Distance Covered: [23975, 24985, 25230, 19530]
+*******************************End of Epidode********************************
+0.5617529880478092
+Episode:  109 Iteration:  1500
+Device Fairness:  0.8282209108706851
+UAV Load Fairness:  0.973034444400302
+Total reward: [817.3032265545979, 375.3562261614429, -15.335522802001318, -7.2229710116747246]
+UAV reached?  [False, False, False, False]
+Connected devices: [89, 85, 83, 56]
+Total Connected devices (/400): 313
+Energy Consumed: [2577838.627261148, 2315608.2406498645, 2183201.9425719962, 2366969.822980823]
+Distance Covered: [29555, 24405, 22515, 25265]
+*******************************End of Epidode********************************
+0.5577689243027892
+Episode:  110 Iteration:  836
+Device Fairness:  0.7999060123561196
+UAV Load Fairness:  0.9598137317872959
+Total reward: [394.4726857524198, 82.39498712408307, 449.5760751866759, 168.3478012314165]
+UAV reached?  [True, False, False, False]
+Connected devices: [99, 76, 102, 60]
+Total Connected devices (/400): 337
+Energy Consumed: [1181382.1141319426, 1352224.9576251148, 1349728.9830001963, 1405354.1506225166]
+Distance Covered: [12555, 14880, 14855, 15835]
+*******************************End of Epidode********************************
+0.5537848605577693
+Episode:  111 Iteration:  687
+Device Fairness:  0.8057076445711432
+UAV Load Fairness:  0.9444293938367762
+Total reward: [890.8315777753285, 735.1074162044029, 136.93577240595945, 583.6372319349591]
+UAV reached?  [False, False, False, True]
+Connected devices: [113, 74, 89, 58]
+Total Connected devices (/400): 334
+Energy Consumed: [1175436.1781987704, 1076891.9574953413, 1182598.5812396526, 1025615.0164972937]
+Distance Covered: [12780, 10970, 13120, 10320]
+*******************************End of Epidode********************************
+0.5498007968127494
+Episode:  112 Iteration:  1392
+Device Fairness:  0.8110979003350423
+UAV Load Fairness:  0.97721756830815
+Total reward: [1306.5794054244745, 828.6762936218485, 1119.6580379330917, -337.1344023187508]
+UAV reached?  [False, False, True, False]
+Connected devices: [95, 86, 65, 70]
+Total Connected devices (/400): 316
+Energy Consumed: [2390214.0282775136, 2380682.6126110633, 2079528.196126967, 2296689.4394060057]
+Distance Covered: [26935, 26885, 20895, 25780]
+*******************************End of Epidode********************************
+0.5458167330677295
+Episode:  113 Iteration:  1342
+Device Fairness:  0.8124441293709642
+UAV Load Fairness:  0.9839320145683068
+Total reward: [336.2283327815174, 138.324906601708, 74.23630057709035, 776.7820853442292]
+UAV reached?  [True, False, False, False]
+Connected devices: [94, 80, 91, 67]
+Total Connected devices (/400): 332
+Energy Consumed: [2004042.1002129319, 2331421.7510708114, 2294717.8146976773, 2071078.618083152]
+Distance Covered: [20145, 26575, 25880, 22085]
+*******************************End of Epidode********************************
+0.5418326693227096
+Episode:  114 Iteration:  1500
+Device Fairness:  0.8265317553819825
+UAV Load Fairness:  0.9713747790670868
+Total reward: [692.945363814584, 1079.0703324226367, 897.5216903857398, -801.42883375959]
+UAV reached?  [False, False, False, False]
+Connected devices: [88, 85, 89, 56]
+Total Connected devices (/400): 318
+Energy Consumed: [2420663.822726442, 2408417.5100606424, 2183201.9425719925, 2599807.5953857424]
+Distance Covered: [27085, 26735, 22515, 29625]
+*******************************End of Epidode********************************
+0.5378486055776897
+Episode:  115 Iteration:  1500
+Device Fairness:  0.8327426813120161
+UAV Load Fairness:  0.9740833600056901
+Total reward: [1136.929894018449, 344.24281451544493, 72.11757252518312, 1050.870659571706]
+UAV reached?  [False, False, False, False]
+Connected devices: [103, 67, 86, 75]
+Total Connected devices (/400): 331
+Energy Consumed: [2551486.4308880144, 2549994.7013468076, 2563188.3003455084, 2194550.608613526]
+Distance Covered: [28800, 28585, 29140, 22515]
+*******************************End of Epidode********************************
+0.5338645418326697
+Episode:  116 Iteration:  1485
+Device Fairness:  0.7411915861894165
+UAV Load Fairness:  0.9724965810667072
+Total reward: [-428.4756128410546, -826.5392771901753, -823.5279005168549, 845.0877878777136]
+UAV reached?  [True, False, False, False]
+Connected devices: [99, 79, 81, 61]
+Total Connected devices (/400): 320
+Energy Consumed: [2144214.034697975, 2574303.8057200327, 2514944.857930286, 2244244.259487071]
+Distance Covered: [22290, 29335, 28745, 22960]
+*******************************End of Epidode********************************
+0.5298804780876498
+Episode:  117 Iteration:  630
+Device Fairness:  0.7989732148744139
+UAV Load Fairness:  0.9306410565051415
+Total reward: [355.9394308588113, 136.88991305733936, 330.1163598014366, -149.95363602329851]
+UAV reached?  [True, False, False, False]
+Connected devices: [108, 78, 95, 48]
+Total Connected devices (/400): 329
+Energy Consumed: [906967.4982840121, 1053670.9198615472, 1065683.6720685551, 1048947.5326947724]
+Distance Covered: [9465, 11430, 12005, 11510]
+*******************************End of Epidode********************************
+0.5258964143426299
+Episode:  118 Iteration:  591
+Device Fairness:  0.8264972980769374
+UAV Load Fairness:  0.9374223437111718
+Total reward: [449.6301046677085, 412.60673073813206, 576.9983938319951, 67.48224682977897]
+UAV reached?  [False, True, False, False]
+Connected devices: [108, 78, 89, 50]
+Total Connected devices (/400): 325
+Energy Consumed: [998276.4683878076, 828296.269894632, 973048.160055556, 1002773.6141379697]
+Distance Covered: [11210, 8880, 10830, 11105]
+*******************************End of Epidode********************************
+0.52191235059761
+Episode:  119 Iteration:  1500
+Device Fairness:  0.8583274921888389
+UAV Load Fairness:  0.9730993508636814
+Total reward: [1087.0584606477437, 750.4181669870497, -177.76764715426395, -38.92408366937141]
+UAV reached?  [False, False, False, False]
+Connected devices: [56, 64, 85, 61]
+Total Connected devices (/400): 266
+Energy Consumed: [2520997.6112228627, 2429177.9488114556, 2174123.00973877, 2394291.262813399]
+Distance Covered: [28240, 26220, 22515, 25475]
+*******************************End of Epidode********************************
+0.5179282868525901
+Episode:  120 Iteration:  930
+Device Fairness:  0.8263738084599155
+UAV Load Fairness:  0.9301424816710472
+Total reward: [314.29914975717105, 256.83303484897044, 258.43867109788016, 334.36073223075823]
+UAV reached?  [False, False, False, True]
+Connected devices: [119, 65, 81, 63]
+Total Connected devices (/400): 328
+Energy Consumed: [1477180.2430550468, 1506473.5778441364, 1593549.4895488713, 1389390.6054762036]
+Distance Covered: [15640, 16720, 17965, 13965]
+*******************************End of Epidode********************************
+0.5139442231075702
+Episode:  121 Iteration:  1500
+Device Fairness:  0.8200961131600729
+UAV Load Fairness:  0.9423974870532303
+Total reward: [935.2657943066015, 1488.2285725560525, 972.8320943021981, -345.922724153804]
+UAV reached?  [False, False, False, False]
+Connected devices: [98, 83, 69, 48]
+Total Connected devices (/400): 298
+Energy Consumed: [2083333.68140651, 2570054.4587212396, 2598534.788218967, 2576227.254762771]
+Distance Covered: [22515, 28745, 29685, 28775]
+*******************************End of Epidode********************************
+0.5099601593625502
+Episode:  122 Iteration:  763
+Device Fairness:  0.8108326518402182
+UAV Load Fairness:  0.947509682679894
+Total reward: [499.6703516603959, 1084.6324167320474, 906.1078699874583, -124.54066312714754]
+UAV reached?  [True, False, False, False]
+Connected devices: [95, 83, 104, 52]
+Total Connected devices (/400): 334
+Energy Consumed: [1102857.889685408, 1254213.1015945412, 1277900.0406769551, 1284348.7178437298]
+Distance Covered: [11460, 14240, 14550, 14460]
+*******************************End of Epidode********************************
+0.5059760956175303
+Episode:  123 Iteration:  1500
+Device Fairness:  0.7902104432066541
+UAV Load Fairness:  0.9406493610865547
+Total reward: [-460.2535412086198, -1196.6915314857906, 94.88908212858667, -130.66655007232316]
+UAV reached?  [False, False, True, False]
+Connected devices: [106, 80, 55, 65]
+Total Connected devices (/400): 306
+Energy Consumed: [2119649.4127394115, 2368765.116229366, 2202448.6946550575, 2453896.8155596666]
+Distance Covered: [22515, 25965, 22535, 26945]
+*******************************End of Epidode********************************
+0.5019920318725104
+Episode:  124 Iteration:  1191
+Device Fairness:  0.8480163392746876
+UAV Load Fairness:  0.9738737669909494
+Total reward: [318.38034364786756, -261.5320442655404, -395.56490213890277, 504.8751067021784]
+UAV reached?  [False, True, False, False]
+Connected devices: [100, 77, 96, 66]
+Total Connected devices (/400): 339
+Energy Consumed: [1721450.9889039341, 1691004.4899052305, 1994487.1919350757, 1916977.6975210665]
+Distance Covered: [18335, 17880, 21870, 21030]
+*******************************End of Epidode********************************
+0.4980079681274905
+Episode:  125 Iteration:  1500
+Device Fairness:  0.8584913977903181
+UAV Load Fairness:  0.9051682864939915
+Total reward: [734.2663265638711, 1149.8428770169992, 572.4602674388326, 546.78671326019]
+UAV reached?  [False, False, False, False]
+Connected devices: [105, 50, 51, 69]
+Total Connected devices (/400): 275
+Energy Consumed: [2187741.4089886076, 2297803.578399381, 2586648.99801131, 2523931.430596645]
+Distance Covered: [22515, 24745, 29425, 28815]
+*******************************End of Epidode********************************
+0.49402390438247057
+Episode:  126 Iteration:  1147
+Device Fairness:  0.8093813723330264
+UAV Load Fairness:  0.9639499516106733
+Total reward: [1000.0926257186525, 1013.1726118631276, 827.9057818576321, 849.6071235164823]
+UAV reached?  [True, False, False, False]
+Connected devices: [108, 76, 86, 64]
+Total Connected devices (/400): 334
+Energy Consumed: [1699205.5533899902, 1946255.8079616898, 1907861.5832128264, 1988177.9350012727]
+Distance Covered: [17220, 21445, 21115, 22215]
+*******************************End of Epidode********************************
+0.49003984063745065
+Episode:  127 Iteration:  553
+Device Fairness:  0.7721892470360239
+UAV Load Fairness:  0.9349112426035503
+Total reward: [296.58987696341217, 637.3010566271976, 761.021730149196, -68.94094910618601]
+UAV reached?  [True, False, False, False]
+Connected devices: [99, 87, 86, 44]
+Total Connected devices (/400): 316
+Energy Consumed: [840743.8304874667, 947129.178481616, 957247.3580228229, 958428.2048145167]
+Distance Covered: [8310, 10535, 10700, 10680]
+*******************************End of Epidode********************************
+0.48605577689243074
+Episode:  128 Iteration:  1269
+Device Fairness:  0.8382236268180344
+UAV Load Fairness:  0.9654955136606512
+Total reward: [959.4909733781896, 574.9194472790363, 684.0701773534574, 1110.103441955299]
+UAV reached?  [True, False, False, False]
+Connected devices: [93, 76, 106, 64]
+Total Connected devices (/400): 339
+Energy Consumed: [1841537.7470590658, 2205742.57083388, 2067637.9166742552, 2147954.2684626956]
+Distance Covered: [19050, 25135, 22515, 23615]
+*******************************End of Epidode********************************
