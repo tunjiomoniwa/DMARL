@@ -9,9 +9,8 @@ The DMARL comprises of 5 variants, namely:
 5. DACEMAD--DDQN are coded in Python. The Double Deep Q-Network library used was adapted from: https://github.com/jeffery1236/Atari_DoubleDeepQNetwork
 
 The Figure below shows our considered scenario:
-<div style="width: 60%; height: 60%">
-![challenges_scenario](https://user-images.githubusercontent.com/46023480/220615690-76feb823-975c-4d81-a5d8-12d3886c6749.jpg)
-</div>
+<img src="https://user-images.githubusercontent.com/46023480/220615690-76feb823-975c-4d81-a5d8-12d3886c6749.jpg" width=40% height=40%>
+
 Due to the difficulty in obtaining non-sparse and temporal mobility traces, several mathematical mobility models have been proposed in ad-hoc networks literature to depict the realistic mobility patterns of ground users. We call three widely used mobility models in our simulations: 
 (i) Random Walk (RW),
 (ii) Random WayPoint (RWP) and,
