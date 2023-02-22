@@ -280,8 +280,8 @@ if __name__ == '__main__':
 
     noise =-130;
     beta = 1;
-    P = -7;
-    Bw =1000000;
+    P = -7;  #UAVs transmit power in dB
+    Bw =1000000; #Bandwidth
     
 
     UAV1cov = [] # stores coverage values
@@ -338,10 +338,6 @@ if __name__ == '__main__':
     z10_ = []
 
 
-##    data_bank_high = []
-##    for i in range(500,500+1401):
-##        data_bank_high.append(np.array(update_high(i)))
-##        print('Loading sumo high traffic data at time',i)
 
     #SUMO TRAFFIC LOADED BASED ON DEPLOYMENT TIMESTEP
     data_bank_low = []
@@ -393,7 +389,6 @@ if __name__ == '__main__':
     
     x1 =  random.randint(250, 400)
     y1 =  random.randint(250, 500)
-    #print([x1,y1])########remove
     z1 = 120
     e1 = 0
     dist1 = 0 
@@ -449,16 +444,6 @@ if __name__ == '__main__':
     z10 = 120
     e10 = 0
     dist10 = 0
-##    dense_goal1 = x1>200 and x1<300 and y1>200 and y1<300
-##    dense_goal2 = x2>200 and x2<300 and y2>200 and y2<300
-##    dense_goal3 = x3>200 and x3<300 and y3>700 and y3<800
-##    dense_goal4 = x4>200 and x4<300 and y4>700 and y4<800
-##    dense_goal5 = x5>700 and x5<800 and y5>200 and y5<300
-##    dense_goal6 = x6>700 and x6<800 and y6>200 and y6<300
-##    dense_goal7 = x7>500 and x7<700 and y7>400 and y7<600
-##    dense_goal8 = x8>500 and x8<700 and y8>400 and y8<600
-##    dense_goal9 = x9>400 and x9<700 and y9>300 and y9<600
-##    dense_goal10 = x10>400 and x10<700 and y10>300 and y10<600
 
      
 
@@ -584,19 +569,6 @@ if __name__ == '__main__':
         s9 = np.array([x9, y9, z9, 5, 0, x9_target, y9_target, ((0+1)/(past_cov9+1))])
         s10 = np.array([x10, y10, z10, 5, 0, x10_target, y10_target, ((0+1)/(past_cov10+1))])
 
-##        s1 = np.array([x1, y1, z1, 100, 100, 100, 5, 5, 5, 5, 0, 0, 0, 0, x1_target, y1_target, ((0+1)/(past_cov1+1))])
-##        s2 = np.array([x2, y2, z2, 100, 100, 100, 5, 5, 5, 5, 0, 0, 0, 0, x2_target, y2_target, ((0+1)/(past_cov2+1))])
-##        s3 = np.array([x3, y3, z3, 100, 100, 100, 5, 5, 5, 5, 0, 0, 0, 0, x3_target, y3_target, ((0+1)/(past_cov3+1))])
-##        s4 = np.array([x4, y4, z4, 100, 100, 100, 5, 5, 5, 5, 0, 0, 0, 0, x4_target, y4_target, ((0+1)/(past_cov4+1))])
-##        s5 = np.array([x5, y5, z5, 100, 100, 100, 5, 5, 5, 5, 0, 0, 0, 0, x5_target, y5_target, ((0+1)/(past_cov5+1))])
-##        s6 = np.array([x6, y6, z6, 100, 100, 100, 5, 5, 5, 5, 0, 0, 0, 0, x6_target, y6_target, ((0+1)/(past_cov6+1))])
-##        s7 = np.array([x7, y7, z7, 100, 100, 100, 5, 5, 5, 5, 0, 0, 0, 0, x7_target, y7_target, ((0+1)/(past_cov7+1))])
-##        s8 = np.array([x8, y8, z8, 100, 100, 100, 5, 5, 5, 5, 0, 0, 0, 0, x8_target, y8_target, ((0+1)/(past_cov8+1))])
-##        s9 = np.array([x9, y9, z9, 100, 100, 100, 5, 5, 5, 5, 0, 0, 0, 0, x9_target, y9_target, ((0+1)/(past_cov9+1))])
-##        s10 = np.array([x10, y10, z10, 100, 100, 100, 5, 5, 5, 5, 0, 0, 0, 0, x10_target, y10_target, ((0+1)/(past_cov10+1))])
-         
-        #sprime1val = np.array([sprime1[0], sprime1[1], sprime1[2], N_1a, N_1b, N_1c, cov_obs[0]-old_cov1, cd1a, cd1b, cd1c, sprime1[3]/(sprime1[3]+sprime1[3]), ed1a, ed1b, ed1c, x1_target, y1_target, ((cov_obs[0]+1)/(past_cov1+1))])
-            
 
         sprime1val = np.array([x1, y1, z1, 5, 0, 0, 0, 0])
         sprime2val = np.array([x2, y2, z2, 5, 0, 0, 0, 0])
@@ -609,11 +581,7 @@ if __name__ == '__main__':
         sprime9val = np.array([x9, y9, z9, 5, 0, 0, 0, 0])
         sprime10val = np.array([x10, y10, z10, 5, 0, 0, 0, 0])
          
-         
-
-        #print([x1_target, x2_target, x3_target, x4_target, x5_target, x6_target, x7_target, x8_target, x9_target, x10_target])
-        #print([y1_target, y2_target, y3_target, y4_target, y5_target, y6_target, y7_target, y8_target, y9_target, y10_target])
-
+       
         dense_goal1 = (x1> x1_target-thresh) and (x1<x1_target+thresh) and (y1>y1_target-thresh) and (y1<y1_target+thresh)
         dense_goal2 = (x2> x2_target-thresh) and (x2<x2_target+thresh) and (y2>y2_target-thresh) and (y2<y2_target+thresh)
         dense_goal3 = (x3> x3_target-thresh) and (x3<x3_target+thresh) and (y3>y3_target-thresh) and (y3<y3_target+thresh)
@@ -653,8 +621,7 @@ if __name__ == '__main__':
         
         cov_obs = stepOverlap10nodes_static(sprime1[0], sprime1[1], sprime1[2], sprime2[0], sprime2[1], sprime2[2], sprime3[0], sprime3[1], sprime3[2], sprime4[0], sprime4[1], sprime4[2], sprime5[0], sprime5[1], sprime5[2],  sprime6[0], sprime6[1], sprime6[2],  sprime7[0], sprime7[1], sprime7[2], sprime8[0], sprime8[1], sprime8[2], sprime9[0], sprime9[1], sprime9[2], sprime10[0], sprime10[1], sprime10[2], xsef, ysef)
 
-        #cov_obs = stepOverlap_static(sprime1[0], sprime1[1], sprime1[2], sprime2[0], sprime2[1], sprime2[2], sprime3[0], sprime3[1], sprime3[2], sprime4[0], sprime4[1], sprime4[2], xsef, ysef)
-
+       
         old_cov1 = 50
         old_cov2 = 50
         old_cov3 = 50
@@ -690,9 +657,6 @@ if __name__ == '__main__':
         tp9 = 0
         tp10 = 0
         
-
-
-         
 
         max_cov_obs =0
 
@@ -763,8 +727,7 @@ if __name__ == '__main__':
 
         while itern<Max_iterations:
 
-
-            
+           
 
             ###
             #rwp_model = RWP(rwp_model[0], rwp_model[1])
@@ -906,15 +869,9 @@ if __name__ == '__main__':
             N_8 = neighbor_val(sprime8[0], sprime8[1], sprime8[2], sprime1[0], sprime1[1], sprime1[2], sprime2[0], sprime2[1], sprime2[2], sprime3[0], sprime3[1], sprime3[2], sprime4[0], sprime4[1], sprime4[2], sprime5[0], sprime5[1], sprime5[2], sprime6[0], sprime6[1], sprime6[2], sprime7[0], sprime7[1], sprime7[2], sprime8[0], sprime8[1], sprime8[2], sprime9[0], sprime9[1], sprime9[2], sprime10[0], sprime10[1], sprime10[2])
             N_9 = neighbor_val(sprime9[0], sprime9[1], sprime9[2], sprime1[0], sprime1[1], sprime1[2], sprime2[0], sprime2[1], sprime2[2], sprime3[0], sprime3[1], sprime3[2], sprime4[0], sprime4[1], sprime4[2], sprime5[0], sprime5[1], sprime5[2], sprime6[0], sprime6[1], sprime6[2], sprime7[0], sprime7[1], sprime7[2], sprime8[0], sprime8[1], sprime8[2], sprime9[0], sprime9[1], sprime9[2], sprime10[0], sprime10[1], sprime10[2])
             N_10 = neighbor_val(sprime10[0], sprime10[1], sprime10[2], sprime1[0], sprime1[1], sprime1[2], sprime2[0], sprime2[1], sprime2[2], sprime3[0], sprime3[1], sprime3[2], sprime4[0], sprime4[1], sprime4[2], sprime5[0], sprime5[1], sprime5[2], sprime6[0], sprime6[1], sprime6[2], sprime7[0], sprime7[1], sprime7[2], sprime8[0], sprime8[1], sprime8[2], sprime9[0], sprime9[1], sprime9[2], sprime10[0], sprime10[1], sprime10[2])
-             
-
-
-            
+                        
             past_cov1 = max(cov_obs[0],past_cov1)
            
-
-                
-
             if cov_obs[0]>=past_cov1:                
                 x1_target = sprime1[0]
                 y1_target = sprime1[1]
@@ -988,8 +945,6 @@ if __name__ == '__main__':
             oldcc = [old_cov1,old_cov2,old_cov3,old_cov4,old_cov5, old_cov6, old_cov7, old_cov8, old_cov9, old_cov10]
 
 
-                        
-            
             ####Neighbour coverage-based cooperative factor relative to each i{th} agent
             mu1 = neighbor_rew_fxn(cov_obs[cl_ne_1[1]],cov_obs[cl_ne_1[2]],cov_obs[cl_ne_1[3]], cov_obs[cl_ne_1[4]],cov_obs[cl_ne_1[5]] ,cov_obs[cl_ne_1[6]], oldcc[cl_ne_1[1]], oldcc[cl_ne_1[2]], oldcc[cl_ne_1[3]], oldcc[cl_ne_1[4]], oldcc[cl_ne_1[5]], oldcc[cl_ne_1[6]], cov_obs[0], past_cov1)
             mu2 = neighbor_rew_fxn(cov_obs[cl_ne_2[1]],cov_obs[cl_ne_2[2]],cov_obs[cl_ne_2[3]], cov_obs[cl_ne_2[4]],cov_obs[cl_ne_2[5]],cov_obs[cl_ne_2[6]], oldcc[cl_ne_2[1]], oldcc[cl_ne_2[2]], oldcc[cl_ne_2[3]], oldcc[cl_ne_2[4]], oldcc[cl_ne_2[5]], oldcc[cl_ne_2[6]], cov_obs[1], past_cov2)
@@ -1213,10 +1168,6 @@ if __name__ == '__main__':
             N_10c = N_10[3]
 
             
-
-
-            
-
             covdiff = (cov_obs[0]+cov_obs[1]+cov_obs[2]+cov_obs[3]+cov_obs[4]+cov_obs[5]+cov_obs[6]+cov_obs[7]+cov_obs[8]+cov_obs[9])-(old_cov1+old_cov2+old_cov3+old_cov4+old_cov5+old_cov6+old_cov7+old_cov8+old_cov9+old_cov10)
 
             usage = 1+(sprime1[3]-energy_UAV1) + (sprime2[3]-energy_UAV2)+ (sprime3[3]-energy_UAV3)+ (sprime4[3]-energy_UAV4)+ (sprime5[3]-energy_UAV5) + (sprime6[3]-energy_UAV6) + (sprime7[3]-energy_UAV7) + (sprime8[3]-energy_UAV8) + (sprime9[3]-energy_UAV9) + (sprime10[3]-energy_UAV10)
@@ -1244,10 +1195,6 @@ if __name__ == '__main__':
 
             tot_tp = tp_sum+(reached_tp*(1400-itern))
             eneeff = tot_tp/energy_sum
-
-
-
-            
 
             
             sprime1val = np.array([sprime1[0], sprime1[1], sprime1[2], cov_obs[0]-old_cov1, sprime1[3]/(sprime1[3]+sprime1[3]), x1_target, y1_target, ((cov_obs[0]+1)/(past_cov1+1))])
@@ -1358,8 +1305,6 @@ if __name__ == '__main__':
             s9=sprime9val
             s10=sprime10val
             
-
-            
             #print(observation)
             itern += 1
 
@@ -1461,54 +1406,6 @@ if __name__ == '__main__':
         #print("Distance Covered:", [sprime1[5], sprime2[5], sprime3[5], sprime4[5], sprime5[5], sprime6[5], sprime7[5], sprime8[5], sprime9[5], sprime10[5]])
         print("*******************************End of Epidode********************************")
 
-        
-##        if i % disp_period == 0:
-##            print(i+1)
-##            # Creating figure
-##            fig = plt.figure(figsize = (10, 7))
-##            ax = plt.axes(projection ="3d")
-##            new_xsef = [hx * 3 for hx in xsef]
-##            #print(new_xsef)
-##            new_ysef = [hy * 7 for hy in ysef]
-##            #print(new_xsef)
-##            plt.plot(new_xsef, new_ysef, 'o')
-##            
-##             
-##            # Creating plot
-##            ax.scatter3D(x1, y1, z1, color = "red")
-##            ax.text(x1, y1, z1, '%s' % ('1'), size=12, zorder=1, color='k')
-##            ax.scatter3D(x2, y2, z2, color = "red")
-##            ax.text(x2, y2, z2, '%s' % ('2'), size=12, zorder=1, color='k')
-##            ax.scatter3D(x3, y3, z3, color = "red")
-##            ax.text(x3, y3, z3, '%s' % ('3'), size=12, zorder=1, color='k')
-##            ax.scatter3D(x4, y4, z4, color = "red")
-##            ax.text(x4, y4, z4, '%s' % ('4'), size=12, zorder=1, color='k')
-##            ax.scatter3D(x5, y5, z5, color = "red")
-##            ax.text(x5, y5, z5, '%s' % ('5'), size=12, zorder=1, color='k')
-##            ax.scatter3D(x6, y6, z6, color = "red")
-##            ax.text(x6, y6, z6, '%s' % ('6'), size=12, zorder=1, color='k')
-##            ax.scatter3D(x7, y7, z7, color = "red")
-##            ax.text(x7, y7, z7, '%s' % ('7'), size=12, zorder=1, color='k')
-##            ax.scatter3D(x8, y8, z8, color = "red")
-##            ax.text(x8, y8, z8, '%s' % ('8'), size=12, zorder=1, color='k')
-##            ax.scatter3D(x9, y9, z9, color = "red")
-##            ax.text(x9, y9, z9, '%s' % ('9'), size=12, zorder=1, color='k')
-##            ax.scatter3D(x10, y10, z10, color = "red")
-##            ax.text(x10, y10, z10, '%s' % ('10'), size=12, zorder=1, color='k')
-##            ax.plot(x1_, y1_, z1_, 'b-')
-##            ax.plot(x2_, y2_, z2_, 'b-')
-##            ax.plot(x3_, y3_, z3_, 'b-')
-##            ax.plot(x4_, y4_, z4_, 'b-')
-##            ax.plot(x5_, y5_, z5_, 'b-')
-##            ax.plot(x6_, y6_, z6_, 'b-')
-##            ax.plot(x7_, y7_, z7_, 'b-')
-##            ax.plot(x8_, y8_, z8_, 'b-')
-##            ax.plot(x9_, y9_, z9_, 'b-')
-##            ax.plot(x10_, y10_, z10_, 'b-')
-##            ax.axis([0, 3000, 0, 7000])
-##            #plt.title("UAVs covering vehicles")                         
-##            # show plot
-##            plt.show()
         
         rewcumsum1 = rewcumsum1 + r_sum1
         rewcumsum2 = rewcumsum2 + r_sum2
