@@ -1,7 +1,7 @@
 # DMARL
 This git repository is linked to the thesis research titled: "Using deep reinforcement learning to optimise energy efficiency of UAV small
 cells in urban environments" It presents codes for the DMARL for UAV-assisted networks.
-The DMARL is comprises of 5 variants: 
+The DMARL comprises of 5 variants, namely: 
 1. DQLSI variant coded using MATLAB, while
 2. MAD--DDQN,
 3. CMAD--DDQN,
