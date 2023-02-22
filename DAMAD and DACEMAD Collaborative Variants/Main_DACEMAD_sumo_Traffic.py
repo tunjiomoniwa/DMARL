@@ -35,14 +35,14 @@ from throughput_calc import TP
 if __name__ == '__main__':
     mode = "Double"
     best_score = -np.inf
-    test_mode = False # False #True
-    render = False #True
+    test_mode = False 
+    render = False 
     n_games = 250 ##episodes
-    Max_iterations = 5#1400
+    Max_iterations = 1400  ###number of time steps
     epsilon = 1
     uavs = 10
     n_games_exp = 250
-    #disp_period = 249  ##epi to display
+    
     
     
     if mode == "Double":
@@ -189,21 +189,7 @@ if __name__ == '__main__':
                         mini_batchsize=1024, epsilon_dec=(1/n_games_exp),
                         env_name='Multi_UAVBS_Deployment',
                         algo_name='DoubleDQAgent', epsilon=1, epsilon_min=0.1)
-        agent11 = DoubleDQAgent(lr=0.0001, gamma=0.95, 
-                        obs_dims=17,
-                        num_actions=5, 
-                        mem_size=10000,
-                        mini_batchsize=1024, epsilon_dec=(1/n_games_exp),
-                        env_name='Multi_UAVBS_Deployment',
-                        algo_name='DoubleDQAgent', epsilon=1, epsilon_min=0.1)
-        agent12 = DoubleDQAgent(lr=0.0001, gamma=0.95, 
-                        obs_dims=17,
-                        num_actions=5, 
-                        mem_size=10000,
-                        mini_batchsize=1024, epsilon_dec=(1/n_games_exp),
-                        env_name='Multi_UAVBS_Deployment',
-                        algo_name='DoubleDQAgent', epsilon=1, epsilon_min=0.1)
-        
+         
 
 
     if test_mode:
@@ -293,8 +279,8 @@ if __name__ == '__main__':
 
     noise =-130;
     beta = 1;
-    P = -7;
-    Bw =1000000;
+    P = -7;   #transmit power in dB
+    Bw =1000000;  #Bandwidth
     
 
     UAV1cov = [] # stores coverage values
@@ -351,10 +337,6 @@ if __name__ == '__main__':
     z10_ = []
 
 
-##    data_bank_high = []
-##    for i in range(500,500+1401):
-##        data_bank_high.append(np.array(update_high(i)))
-##        print('Loading sumo high traffic data at time',i)
 
     
     data_bank_low = []
@@ -363,7 +345,7 @@ if __name__ == '__main__':
         print('Loading sumo M50 traffic data at time',i)
 
         
-    #sumo_veh_at_t_high = data_bank_high[0]
+    
     sumo_veh_at_t_low = data_bank_low[0]
 
 
@@ -465,18 +447,7 @@ if __name__ == '__main__':
     e10 = 0
     dist10 = 0
 
-##    dense_goal1 = x1>200 and x1<300 and y1>200 and y1<300
-##    dense_goal2 = x2>200 and x2<300 and y2>200 and y2<300
-##    dense_goal3 = x3>200 and x3<300 and y3>700 and y3<800
-##    dense_goal4 = x4>200 and x4<300 and y4>700 and y4<800
-##    dense_goal5 = x5>700 and x5<800 and y5>200 and y5<300
-##    dense_goal6 = x6>700 and x6<800 and y6>200 and y6<300
-##    dense_goal7 = x7>500 and x7<700 and y7>400 and y7<600
-##    dense_goal8 = x8>500 and x8<700 and y8>400 and y8<600
-##    dense_goal9 = x9>400 and x9<700 and y9>300 and y9<600
-##    dense_goal10 = x10>400 and x10<700 and y10>300 and y10<600
-
-     
+ 
 
 
     x1_target  = x1
@@ -765,7 +736,8 @@ if __name__ == '__main__':
 
             
 
-            ###IF ANY OF THE MOBILITY MODELS ARE USED
+            ###IF ANY OF THE THREE MOBILITY MODELS ARE USED, JUST UNCOMMENT
+            
             #rwp_model = RWP(rwp_model[0], rwp_model[1])
             #rw_model = RW(rw_model[0], rw_model[1])
             #gmm_model = GMM(gmm_model[0], gmm_model[1])
@@ -781,8 +753,7 @@ if __name__ == '__main__':
             #xsef = np.concatenate((gmm_model[0], xblock1, xblock2, xblock3, xblock4))
             #ysef = np.concatenate((gmm_model[1], yblock1, yblock2, yblock3, yblock4))
 
-
-            
+           
 
             
             #SUMO TRAFFIC LOADED BASED ON DEPLOYMENT TIMESTEP
@@ -795,7 +766,7 @@ if __name__ == '__main__':
             run_done = 7 
             
             if c1>=run_done:
-                action1 = 0
+                action1 = 0 
             else: 
                 action1 =  agent1.get_action(s1, epsilon)
                 
@@ -913,11 +884,8 @@ if __name__ == '__main__':
             N_9 = neighbor_val(sprime9[0], sprime9[1], sprime9[2], sprime1[0], sprime1[1], sprime1[2], sprime2[0], sprime2[1], sprime2[2], sprime3[0], sprime3[1], sprime3[2], sprime4[0], sprime4[1], sprime4[2], sprime5[0], sprime5[1], sprime5[2], sprime6[0], sprime6[1], sprime6[2], sprime7[0], sprime7[1], sprime7[2], sprime8[0], sprime8[1], sprime8[2], sprime9[0], sprime9[1], sprime9[2], sprime10[0], sprime10[1], sprime10[2])
             N_10 = neighbor_val(sprime10[0], sprime10[1], sprime10[2], sprime1[0], sprime1[1], sprime1[2], sprime2[0], sprime2[1], sprime2[2], sprime3[0], sprime3[1], sprime3[2], sprime4[0], sprime4[1], sprime4[2], sprime5[0], sprime5[1], sprime5[2], sprime6[0], sprime6[1], sprime6[2], sprime7[0], sprime7[1], sprime7[2], sprime8[0], sprime8[1], sprime8[2], sprime9[0], sprime9[1], sprime9[2], sprime10[0], sprime10[1], sprime10[2])
              
-
-
             
-            past_cov1 = max(cov_obs[0],past_cov1)
-           
+            past_cov1 = max(cov_obs[0],past_cov1)          
 
                 
 
@@ -992,11 +960,9 @@ if __name__ == '__main__':
                 y10_target = y10_target
 
             oldcc = [old_cov1,old_cov2,old_cov3,old_cov4,old_cov5, old_cov6, old_cov7, old_cov8, old_cov9, old_cov10]
-
-
             
             
-            ####Neighbour coverage-based cooperative factor relative to each i{th} agent
+            ####Neighbour/Team reward: coverage-based cooperative factor relative to each i{th} agent
             mu1 = neighbor_rew_fxn(cov_obs[cl_ne_1[1]],cov_obs[cl_ne_1[2]],cov_obs[cl_ne_1[3]], cov_obs[cl_ne_1[4]],cov_obs[cl_ne_1[5]] ,cov_obs[cl_ne_1[6]], oldcc[cl_ne_1[1]], oldcc[cl_ne_1[2]], oldcc[cl_ne_1[3]], oldcc[cl_ne_1[4]], oldcc[cl_ne_1[5]], oldcc[cl_ne_1[6]], cov_obs[0], past_cov1)
             mu2 = neighbor_rew_fxn(cov_obs[cl_ne_2[1]],cov_obs[cl_ne_2[2]],cov_obs[cl_ne_2[3]], cov_obs[cl_ne_2[4]],cov_obs[cl_ne_2[5]],cov_obs[cl_ne_2[6]], oldcc[cl_ne_2[1]], oldcc[cl_ne_2[2]], oldcc[cl_ne_2[3]], oldcc[cl_ne_2[4]], oldcc[cl_ne_2[5]], oldcc[cl_ne_2[6]], cov_obs[1], past_cov2)
             mu3 = neighbor_rew_fxn(cov_obs[cl_ne_3[1]],cov_obs[cl_ne_3[2]],cov_obs[cl_ne_3[3]], cov_obs[cl_ne_3[4]],cov_obs[cl_ne_3[5]],cov_obs[cl_ne_3[6]], oldcc[cl_ne_3[1]], oldcc[cl_ne_3[2]], oldcc[cl_ne_3[3]], oldcc[cl_ne_3[4]], oldcc[cl_ne_3[5]], oldcc[cl_ne_3[6]], cov_obs[2], past_cov3)
@@ -1285,7 +1251,7 @@ if __name__ == '__main__':
              
             
             if not test_mode:
-                agent1.store_memory(s1, action1, r1, sprime1val, done1)
+                agent1.store_memory(s1, action1, r1, sprime1val, done1)  #store experiences
                 agent2.store_memory(s2, action2, r2, sprime2val, done2)
                 agent3.store_memory(s3, action3, r3, sprime3val, done3)
                 agent4.store_memory(s4, action4, r4, sprime4val, done4)
@@ -1366,81 +1332,12 @@ if __name__ == '__main__':
             s8=sprime8val
             s9=sprime9val
             s10=sprime10val
-           
-##            if i % disp_period == 0:
-##                x1 = min(sprime1[0]*5.5, 5500)
-##                y1 = min(sprime1[1]*5.5, 5500)
-##                z1 = sprime1[2]
-##                x2 = min(sprime2[0]*5.5, 5500)
-##                y2 = min(sprime2[1]*5.5, 5500)
-##                z2 =  sprime2[2]
-##                x3 = min(sprime3[0]*5.5, 5500)
-##                y3 = min(sprime3[1]*5.5, 5500)
-##                z3 =  sprime3[2]
-##                x4 = min(sprime4[0]*5.5, 5500)
-##                y4 = min(sprime4[1]*5.5, 5500)
-##                z4 =  sprime4[2]
-##                x5 = min(sprime5[0]*5.5, 5500)
-##                y5 = min(sprime5[1]*5.5, 5500)
-##                z5 =  sprime5[2]
-##                x6 = min(sprime6[0]*5.5, 5500)
-##                y6 = min(sprime6[1]*5.5, 5500)
-##                z6 =  sprime6[2]
-##                x7 = min(sprime7[0]*5.5, 5500)
-##                y7 = min(sprime7[1]*5.5, 5500)
-##                z7 =  sprime7[2]
-##                x8 = min(sprime8[0]*5.5, 5500)
-##                y8 = min(sprime8[1]*5.5, 5500)
-##                z8 =  sprime8[2]
-##                x9 = min(sprime9[0]*5.5, 5500)
-##                y9 = min(sprime9[1]*5.5, 5500)
-##                z9 =  sprime9[2]
-##                x10 = min(sprime10[0]*5.5, 5500)
-##                y10 = min(sprime10[1]*5.5, 5500)
-##                z10 = sprime10[2]
-##
-##
-##                x1_.append(x1)
-##                y1_.append(y1)
-##                z1_.append(z1)
-##                x2_.append(x2)
-##                y2_.append(y2)
-##                z2_.append(z2)
-##                x3_.append(x3)
-##                y3_.append(y3)
-##                z3_.append(z3)
-##                x4_.append(x4)
-##                y4_.append(y4)
-##                z4_.append(z4)
-##                x5_.append(x5)
-##                y5_.append(y5)
-##                z5_.append(z5)
-##                x6_.append(x6)
-##                y6_.append(y6)
-##                z6_.append(z6)
-##                x7_.append(x7)
-##                y7_.append(y7)
-##                z7_.append(z7)
-##                x8_.append(x8)
-##                y8_.append(y8)
-##                z8_.append(z8)
-##                x9_.append(x9)
-##                y9_.append(y9)
-##                z9_.append(z9)
-##                x10_.append(x10)
-##                y10_.append(y10)
-##                z10_.append(z10)
-
-  
-
-            
-            
-            #print(observation)
+          
             itern += 1
 
             if c1>=1 and c2>=1 and c3>=1 and c4>=1 and c5>=1 and c6>=1 and c7>=1 and c8>=1 and c9>=1 and c10>=1: 
                 
-                break
+                break ### if all UAVs have depleted their energy or are done.
 
         
              
@@ -1501,7 +1398,6 @@ if __name__ == '__main__':
         scores10.append(r_sum10) ###from 1 to 2
         eps_history10.append(epsilon)
         steps_arr10.append(itern)
-
                
         
 
@@ -1525,9 +1421,6 @@ if __name__ == '__main__':
                  
                 
 
-        #print(f'Episode {i}: score={score}, average score={avg_score}, epsilon={epsilon}, steps={itern}')
-        
-        
         print(epsilon)
         print("Episode: ", i, "Iteration: ", itern)        
         print("Energy Efficiency: ", eneeff)
@@ -1541,54 +1434,6 @@ if __name__ == '__main__':
         print("*******************************End of Epidode********************************")
 
         
-##        if i % disp_period == 0:
-##            print(i+1)
-##            # Creating figure
-##            fig = plt.figure(figsize = (10, 7))
-##            ax = plt.axes(projection ="3d")
-##            new_xsef = [hx * 5.5 for hx in xsef]
-##            #print(new_xsef)
-##            new_ysef = [hy * 5.5 for hy in ysef]
-##            #print(new_xsef)
-##            plt.plot(new_xsef, new_ysef, 'o')
-##            
-##             
-##            # Creating plot
-##            ax.scatter3D(x1, y1, z1, color = "red")
-##            ax.text(x1, y1, z1, '%s' % ('1'), size=12, zorder=1, color='k')
-##            ax.scatter3D(x2, y2, z2, color = "red")
-##            ax.text(x2, y2, z2, '%s' % ('2'), size=12, zorder=1, color='k')
-##            ax.scatter3D(x3, y3, z3, color = "red")
-##            ax.text(x3, y3, z3, '%s' % ('3'), size=12, zorder=1, color='k')
-##            ax.scatter3D(x4, y4, z4, color = "red")
-##            ax.text(x4, y4, z4, '%s' % ('4'), size=12, zorder=1, color='k')
-##            ax.scatter3D(x5, y5, z5, color = "red")
-##            ax.text(x5, y5, z5, '%s' % ('5'), size=12, zorder=1, color='k')
-##            ax.scatter3D(x6, y6, z6, color = "red")
-##            ax.text(x6, y6, z6, '%s' % ('6'), size=12, zorder=1, color='k')
-##            ax.scatter3D(x7, y7, z7, color = "red")
-##            ax.text(x7, y7, z7, '%s' % ('7'), size=12, zorder=1, color='k')
-##            ax.scatter3D(x8, y8, z8, color = "red")
-##            ax.text(x8, y8, z8, '%s' % ('8'), size=12, zorder=1, color='k')
-##            ax.scatter3D(x9, y9, z9, color = "red")
-##            ax.text(x9, y9, z9, '%s' % ('9'), size=12, zorder=1, color='k')
-##            ax.scatter3D(x10, y10, z10, color = "red")
-##            ax.text(x10, y10, z10, '%s' % ('10'), size=12, zorder=1, color='k')
-##            ax.plot(x1_, y1_, z1_, 'b-')
-##            ax.plot(x2_, y2_, z2_, 'b-')
-##            ax.plot(x3_, y3_, z3_, 'b-')
-##            ax.plot(x4_, y4_, z4_, 'b-')
-##            ax.plot(x5_, y5_, z5_, 'b-')
-##            ax.plot(x6_, y6_, z6_, 'b-')
-##            ax.plot(x7_, y7_, z7_, 'b-')
-##            ax.plot(x8_, y8_, z8_, 'b-')
-##            ax.plot(x9_, y9_, z9_, 'b-')
-##            ax.plot(x10_, y10_, z10_, 'b-')
-##            ax.axis([0, 5000, 0, 5500])
-##            #plt.title("UAVs covering vehicles")                         
-##            # show plot
-##            plt.show()
-        
         rewcumsum1 = rewcumsum1 + r_sum1
         rewcumsum2 = rewcumsum2 + r_sum2
         rewcumsum3 = rewcumsum3 + r_sum3
@@ -1598,10 +1443,9 @@ if __name__ == '__main__':
         rewcumsum7 = rewcumsum7 + r_sum7
         rewcumsum8 = rewcumsum8 + r_sum8
         rewcumsum9 = rewcumsum9 + r_sum9
-        rewcumsum10 = rewcumsum10 + r_sum10
-             
+        rewcumsum10 = rewcumsum10 + r_sum10             
 
-        #devfairness.append(fairness_dev)
+        
         efficiency.append(eneeff)
         throughput.append(tot_tp)
         vehicles_deployed.append(len(xsef))
@@ -1656,11 +1500,12 @@ if __name__ == '__main__':
             
         iter_store.append(itern)
 
-            
+        ##to save results/metric
         np.savetxt('results_sumo_test/Energy_n7_congested_dacemad.dat', [UAV1eng, UAV2eng, UAV3eng, UAV4eng, UAV5eng, UAV6eng, UAV7eng, UAV8eng, UAV9eng, UAV10eng])
         np.savetxt('results_sumo_test/Covered_vehicles_n7_congested_dacemad.dat', [UAV1cov, UAV2cov, UAV3cov, UAV4cov, UAV5cov, UAV6cov, UAV7cov, UAV8cov, UAV9cov, UAV10cov])
         np.savetxt('results_sumo_test/deployed_vehicles_n7_congested_dacemad.dat', [vehicles_deployed])
         np.savetxt('results_sumo_test/ee_n7_congested_dacemad.dat', [efficiency])
+        
         z1 = 120
         z2 = 120
         z3 = 120
