@@ -1,6 +1,6 @@
 # Double Deep Q Network (DDQN) for UAV-Assisted Networks
 
-This project applies ideas from research literature to solve Atari OpenAI gym environments.
+This project applies ideas from some research literature, and applies this to UAV-assisted networks. 
 
 ## Getting Started
 
