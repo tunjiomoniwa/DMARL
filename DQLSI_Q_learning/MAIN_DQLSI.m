@@ -553,7 +553,7 @@ for runs = 1:1
              old_ene3 = obs3(4);             
              old_ene4 = obs4(4);
             
-            if obs1(7) ||obs_over(1)>=150
+            if obs1(7) ||obs_over(1)>=150 %%150 is the max number of users that can be connected to a UAV
                % disp(['UAV-1 Reached goal state @ ', num2str(iter)]) 
                 UAV1ener =  obs1(4);
                 UAV1cover =  obs_over(1); %obs1(5) + obs1(11);
@@ -564,7 +564,7 @@ for runs = 1:1
             
             %%%%%%%%
             
-            if obs2(7) ||obs_over(2)>=150 
+            if obs2(7) ||obs_over(2)>=150  %%150 is the max number of users that can be connected to a UAV
                % disp(['UAV-2 Reached goal state @ ', num2str(iter)]) 
                 UAV2ener =  obs2(4);
                 UAV2cover =  obs_over(2); %obs2(5) + obs2(11);
@@ -574,7 +574,7 @@ for runs = 1:1
             end
             
             %%%%%%%%%
-             if obs3(7) ||obs_over(3)>=150 
+             if obs3(7) ||obs_over(3)>=150 %%150 is the max number of users that can be connected to a UAV
                % disp(['UAV-3 Reached goal state @ ', num2str(iter)]) 
                 UAV3ener =  obs3(4);
                 UAV3cover =  obs_over(3); %obs3(5) + obs3(11);
@@ -584,7 +584,7 @@ for runs = 1:1
              end
             
              %%%%%%%%%
-             if obs4(7) ||obs_over(4)>=150 
+             if obs4(7) ||obs_over(4)>=150  %%150 is the max number of users that can be connected to a UAV
                % disp(['UAV-4 Reached goal state @ ', num2str(iter)]) 
                 UAV4ener =  obs4(4);
                 UAV4cover =  obs_over(4); % obs4(5) + obs4(11);
