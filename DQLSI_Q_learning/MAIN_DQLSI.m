@@ -185,6 +185,15 @@ for runs = 1:1
     x4= obs_init4(1);
     y4= obs_init4(2);
     z4 = obs_init4(3);
+    
+    dis_x1 = 0;
+    dis_y1 = 0;
+    dis_x2 = 500;
+    dis_y2 = 0;
+    dis_x3 = 0;
+    dis_y3 = 500;
+    dis_x4 = 500;
+    dis_y4 = 500;
 
 
 
@@ -350,10 +359,10 @@ for runs = 1:1
         UAV4geogA =  obs4(6);
 
 
-        current_state1  = Boxing1(obs1(1), obs1(2), obs1(3)); %mapping to current state
-        current_state2  = Boxing2(obs2(1), obs2(2), obs2(3)); %mapping to current state
-        current_state3  = Boxing3(obs3(1), obs3(2), obs3(3)); 
-        current_state4  = Boxing4(obs4(1), obs4(2), obs4(3)); 
+        current_state1  = Boxing(obs1(1), obs1(2), obs1(3), dis_x1, dis_y1); %mapping to current state
+        current_state2  = Boxing(obs2(1), obs2(2), obs2(3), dis_x2, dis_y2); %mapping to current state
+        current_state3  = Boxing(obs3(1), obs3(2), obs3(3), dis_x3, dis_y3); 
+        current_state4  = Boxing(obs4(1), obs4(2), obs4(3), dis_x4, dis_y4); 
         %current_state1  = groupingBL1(obs1(1), obs1(2), obs1(3)); %mapping to current state
 
         %obs1 %%geog_area %%initialization %%%%%not useful now
@@ -449,10 +458,10 @@ for runs = 1:1
             obs4 = stepBL4_static(action4, obs4(1), obs4(2), obs4(3), obs4(4), obs4(12), obs3(1), obs3(2), obs3(3), xse4_, yse4_, obs4(12:12+numMobileEndDevices_S-1), obs4(12+numMobileEndDevices_S:12+numMobileEndDevices_S+numMobileEndDevices_S-1));
            
             %new_state1  = groupingBL1(obs1(1), obs1(2), obs1(3));
-            new_state1  = Boxing1(obs1(1), obs1(2), obs1(3));
-            new_state2  = Boxing2(obs2(1), obs2(2), obs2(3));
-            new_state3  = Boxing3(obs3(1), obs3(2), obs3(3));
-            new_state4  = Boxing4(obs4(1), obs4(2), obs4(3));
+            new_state1  = Boxing(obs1(1), obs1(2), obs1(3), dis_x1, dis_y1);
+            new_state2  = Boxing(obs2(1), obs2(2), obs2(3), dis_x2, dis_y2);
+            new_state3  = Boxing(obs3(1), obs3(2), obs3(3), dis_x3, dis_y3);
+            new_state4  = Boxing(obs4(1), obs4(2), obs4(3), dis_x4, dis_y4);
             %[x1, y1, z1, energy1, coveragefactorstatic1, UAVgeographicalArea, done, dead,  goal1, uav1distFromgoal, coveragefactormobile, xme1, yme1] = stepBL1_static(cur_action1, x1s, y1s, z1s);
             
             %[new_state1 new_state2 new_state3 new_state4]
@@ -530,16 +539,16 @@ for runs = 1:1
             
             if epi<3*episodes/4 && obs1(7)==0 
                 % update q values
-                Q1(current_state1,action1) = update_Q1(Q1, current_state1, new_state1, action1, reward1, alpha, gamma);                
+                Q1(current_state1,action1) = update_Q(Q1, current_state1, new_state1, action1, reward1, alpha, gamma);                
             end  
             if epi<3*episodes/4 && obs2(7)==0
-                Q2(current_state2,action2) = update_Q2(Q2, current_state2, new_state2, action2, reward2, alpha, gamma);
+                Q2(current_state2,action2) = update_Q(Q2, current_state2, new_state2, action2, reward2, alpha, gamma);
             end   
             if epi<3*episodes/4 && obs3(7)==0
-                Q3(current_state3,action3) = update_Q3(Q3, current_state3, new_state3, action3, reward3, alpha, gamma);
+                Q3(current_state3,action3) = update_Q(Q3, current_state3, new_state3, action3, reward3, alpha, gamma);
             end
             if epi<3*episodes/4 && obs4(7)==0
-                Q4(current_state4,action4) = update_Q4(Q4, current_state4, new_state4, action4, reward4, alpha, gamma);
+                Q4(current_state4,action4) = update_Q(Q4, current_state4, new_state4, action4, reward4, alpha, gamma);
             end
             
 
@@ -553,7 +562,7 @@ for runs = 1:1
              old_ene3 = obs3(4);             
              old_ene4 = obs4(4);
             
-            if obs1(7) ||obs_over(1)>=150 %%150 is the max number of users that can be connected to a UAV
+            if obs1(7) ||obs_over(1)>=MAX_user_connections
                % disp(['UAV-1 Reached goal state @ ', num2str(iter)]) 
                 UAV1ener =  obs1(4);
                 UAV1cover =  obs_over(1); %obs1(5) + obs1(11);
@@ -564,7 +573,7 @@ for runs = 1:1
             
             %%%%%%%%
             
-            if obs2(7) ||obs_over(2)>=150  %%150 is the max number of users that can be connected to a UAV
+            if obs2(7) ||obs_over(2)>=MAX_user_connections
                % disp(['UAV-2 Reached goal state @ ', num2str(iter)]) 
                 UAV2ener =  obs2(4);
                 UAV2cover =  obs_over(2); %obs2(5) + obs2(11);
@@ -574,7 +583,7 @@ for runs = 1:1
             end
             
             %%%%%%%%%
-             if obs3(7) ||obs_over(3)>=150 %%150 is the max number of users that can be connected to a UAV
+             if obs3(7) ||obs_over(3)>=MAX_user_connections
                % disp(['UAV-3 Reached goal state @ ', num2str(iter)]) 
                 UAV3ener =  obs3(4);
                 UAV3cover =  obs_over(3); %obs3(5) + obs3(11);
@@ -584,7 +593,7 @@ for runs = 1:1
              end
             
              %%%%%%%%%
-             if obs4(7) ||obs_over(4)>=150  %%150 is the max number of users that can be connected to a UAV
+             if obs4(7) ||obs_over(4)>=MAX_user_connections
                % disp(['UAV-4 Reached goal state @ ', num2str(iter)]) 
                 UAV4ener =  obs4(4);
                 UAV4cover =  obs_over(4); % obs4(5) + obs4(11);
@@ -655,19 +664,6 @@ for runs = 1:1
             plot(xse4, yse4, 'bo', 'MarkerSize',2, 'MarkerFaceColor','b','MarkerEdgeColor','b');
             plot(xunit4,yunit4,'k.')
             hold on;
-            %plot(Xcent(:,1),Xcent(:,2),'rx',...
-             %   'MarkerSize',15,'LineWidth',3) 
-            %plot(C(:,1),C(:,2),'rx',...
-             %   'MarkerSize',15,'LineWidth',3) 
-    %                 plot(xunit3,yunit3,'k.')
-    %                 plot(xunit4,yunit4,'k.')
-    %                 plot(xunit5,yunit5,'k.')
-    %                 plot(xunit6,yunit6,'k.')
-    %                 plotcube([100,100,0],100,100,100,'r');
-    %                 plotcube([700,300,0],120,100,50,'b');
-    %                 plotcube([200,900,0],100,100,50,'y');
-    %                 plotcube([300,500,0],100,100,150,'c');
-    %                 plotcube([800,900,0],80,300,100,'g');
                     for hh =1: 1
                         plot(obs1(12:12+numMobileEndDevices_L-1), obs1(12+numMobileEndDevices_L:12+ numMobileEndDevices_L+ numMobileEndDevices_L -1),'*','MarkerSize',2,'MarkerFaceColor','r','MarkerEdgeColor','r');
                         hold on;
@@ -676,11 +672,7 @@ for runs = 1:1
                         plot(obs3(12:12+numMobileEndDevices_L-1), obs3(12+numMobileEndDevices_L:12+ numMobileEndDevices_L+ numMobileEndDevices_L -1),'*','MarkerSize',2,'MarkerFaceColor','r','MarkerEdgeColor','r');
                          hold on;
                         plot(obs4(12:12+numMobileEndDevices_S-1), obs4(12+numMobileEndDevices_S:12+ numMobileEndDevices_S+ numMobileEndDevices_S -1),'*','MarkerSize',2,'MarkerFaceColor','r','MarkerEdgeColor','r');
-    %                     plot(xme1,yme1,'*','MarkerSize',2,'MarkerFaceColor','r','MarkerEdgeColor','r');
-    %                     plot(xme2,yme2,'*','MarkerSize',2,'MarkerFaceColor','r','MarkerEdgeColor','r');
-                        %axis([-20 1020 -20 1020])
                         axis([-20 1020 -20 1020])
-                        %legend('Coverage region', 'UAV-BS','End-devices')
 
                         grid on;
                         pause(.1)
@@ -696,17 +688,9 @@ for runs = 1:1
 
         end
         if epi == episodes
-            
-%             nonzeros(Q1)
-%             nonzeros(Q2)
-%             nonzeros(Q3)
-%             nonzeros(Q4)
+
         end
         disp(['End of Episode - ', num2str(epi)])
-        %UAV1cover = max(obs_over(1), UAV1cover);
-        %UAV2cover = max(obs_over(2), UAV2cover);
-        %UAV3cover = max(obs_over(3), UAV3cover);
-        %UAV4cover = max(obs_over(4), UAV4cover);
         
         if obs_over(1)>=MAX_user_connections
             UAV1cover =MAX_user_connections;

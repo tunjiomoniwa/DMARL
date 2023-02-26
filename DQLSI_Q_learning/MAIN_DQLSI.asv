@@ -24,7 +24,7 @@ for runs = 1:1
     xlabel('x (m)');
     ylabel('y (m)');
     zlabel('h (m)');
-    title('3D Terrain');
+    title('DQLSI 3D Terrain');
     axis equal;
 
     grid on;
@@ -185,6 +185,15 @@ for runs = 1:1
     x4= obs_init4(1);
     y4= obs_init4(2);
     z4 = obs_init4(3);
+    
+    dis_x1 = 0;
+    dis_y1 = 0;
+    dis_x2 =
+    dis_y2 = 500;
+    dis_x3 = 0;
+    dis_y3 = 500;
+    dis_x4 = 500;
+    dis_y4 = 500;
 
 
 
@@ -209,7 +218,7 @@ for runs = 1:1
     yunit4 = r4(1) .* sin(th) + y4;
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    iteration_steps = 7000;
+    iteration_steps = 1500;
     episodes = 100;
     alpha = 0.0001;
     gamma =0.95;  
@@ -350,10 +359,10 @@ for runs = 1:1
         UAV4geogA =  obs4(6);
 
 
-        current_state1  = Boxing1(obs1(1), obs1(2), obs1(3)); %mapping to current state
-        current_state2  = Boxing2(obs2(1), obs2(2), obs2(3)); %mapping to current state
-        current_state3  = Boxing3(obs3(1), obs3(2), obs3(3)); 
-        current_state4  = Boxing4(obs4(1), obs4(2), obs4(3)); 
+        current_state1  = Boxing(obs1(1), obs1(2), obs1(3), dis_x1, dis_y1); %mapping to current state
+        current_state2  = Boxing(obs2(1), obs2(2), obs2(3), dis_x2, dis_y2); %mapping to current state
+        current_state3  = Boxing(obs3(1), obs3(2), obs3(3), dis_x3, dis_y3); 
+        current_state4  = Boxing(obs4(1), obs4(2), obs4(3), dis_x4, dis_y4); 
         %current_state1  = groupingBL1(obs1(1), obs1(2), obs1(3)); %mapping to current state
 
         %obs1 %%geog_area %%initialization %%%%%not useful now
@@ -427,31 +436,12 @@ for runs = 1:1
             oldConn_count3 = obs_over(3);
             oldConn_count4 = obs_over(4);
             
-            %% ACTIONS FOR THE UAVs
-            action1 = action_selection(obs1(7), obs_over(1), MAX_user_connections, epsilon, current_state1, Q1)
+            %% ACTIONS FOR THE UAVs IN THE ENVIRONMENT
+            action1 = action_selection(obs1(7), obs_over(1), MAX_user_connections, epsilon, current_state1, Q1);
             action2 = action_selection(obs2(7), obs_over(2), MAX_user_connections, epsilon, current_state2, Q2);
-
-            %%%%%%%%%%%%%
-            if obs2(7) ||obs_over(2)>=150
-                action2 = 7;
-            else
-                action2 = select_action2(epsilon, current_state2, Q2);
-            end
-            
-            %%%%%%%%%%%%%
-            if obs3(7) ||obs_over(3)>=150
-                action3 = 7;
-            else
-                action3 = select_action3(epsilon, current_state3, Q3);
-            end
-            
-            %%%%%%%%%%%%%
-            if obs4(7) ||obs_over(4)>=150
-                action4 = 7;
-            else
-                action4 = select_action4(epsilon, current_state4, Q4);
-            end
-            
+            action3 = action_selection(obs3(7), obs_over(3), MAX_user_connections, epsilon, current_state3, Q3);
+            action4 = action_selection(obs4(7), obs_over(4), MAX_user_connections, epsilon, current_state4, Q4);
+           
             
             [obsmobx1, obsmoby1] = RWP1(xme, yme);
             [obsmobx2, obsmoby2] = RWP2(xme2, yme2);
@@ -466,16 +456,12 @@ for runs = 1:1
             obs2 = stepBL2_static(action2, obs2(1), obs2(2), obs2(3), obs2(4), obs2(12), obs1(1), obs1(2), obs1(3), xse2_, yse2_, obs2(12:12+numMobileEndDevices_S-1), obs2(12+numMobileEndDevices_S:12+numMobileEndDevices_S+numMobileEndDevices_S-1));
             obs3 = stepBL3_static(action3, obs3(1), obs3(2), obs3(3), obs3(4), obs3(12), obs1(1), obs1(2), obs1(3), xse3_, yse3_, obs3(12:12+numMobileEndDevices_L-1), obs3(12+numMobileEndDevices_L:12+numMobileEndDevices_L+numMobileEndDevices_L-1));
             obs4 = stepBL4_static(action4, obs4(1), obs4(2), obs4(3), obs4(4), obs4(12), obs3(1), obs3(2), obs3(3), xse4_, yse4_, obs4(12:12+numMobileEndDevices_S-1), obs4(12+numMobileEndDevices_S:12+numMobileEndDevices_S+numMobileEndDevices_S-1));
-           %%%%%%%%%%%%%%%%%%%
-           %%overlapping state information from the environment
-           %%%%%%%%%%%%%%
-           %[xse yse]
            
             %new_state1  = groupingBL1(obs1(1), obs1(2), obs1(3));
-            new_state1  = Boxing1(obs1(1), obs1(2), obs1(3));
-            new_state2  = Boxing2(obs2(1), obs2(2), obs2(3));
-            new_state3  = Boxing3(obs3(1), obs3(2), obs3(3));
-            new_state4  = Boxing4(obs4(1), obs4(2), obs4(3));
+            new_state1  = Boxing(obs1(1), obs1(2), obs1(3), dis_x1, dis_y1);
+            new_state2  = Boxing(obs2(1), obs2(2), obs2(3), dis_x2, dis_y2);
+            new_state3  = Boxing(obs3(1), obs3(2), obs3(3), dis_x3, dis_y3);
+            new_state4  = Boxing(obs4(1), obs4(2), obs4(3), dis_x4, dis_y4);
             %[x1, y1, z1, energy1, coveragefactorstatic1, UAVgeographicalArea, done, dead,  goal1, uav1distFromgoal, coveragefactormobile, xme1, yme1] = stepBL1_static(cur_action1, x1s, y1s, z1s);
             
             %[new_state1 new_state2 new_state3 new_state4]
@@ -731,22 +717,22 @@ for runs = 1:1
         %UAV3cover = max(obs_over(3), UAV3cover);
         %UAV4cover = max(obs_over(4), UAV4cover);
         
-        if obs_over(1)>=150
+        if obs_over(1)>=MAX_user_connections
             UAV1cover =MAX_user_connections;
         else
             UAV1cover = max(obs_over(1), UAV1cover);
         end
-        if obs_over(2)>=150
+        if obs_over(2)>=MAX_user_connections
             UAV2cover =MAX_user_connections;
         else
             UAV2cover = max(obs_over(2), UAV2cover);
         end
-        if obs_over(3)>=150
+        if obs_over(3)>=MAX_user_connections
             UAV3cover =MAX_user_connections;
         else
             UAV3cover = max(obs_over(3), UAV3cover);
         end
-        if obs_over(4)>=150
+        if obs_over(4)>=MAX_user_connections
             UAV4cover =MAX_user_connections;
         else
             UAV4cover = max(obs_over(4), UAV4cover);
