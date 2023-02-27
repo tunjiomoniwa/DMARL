@@ -14,10 +14,7 @@ from RWP import RWP  ## This is for the random waypoint
 from GMM import GMM  ## this is for the Gauss Markov Mobility model
 from RW import RW  ## this is the Random walk
 from stepOverlap4nodes_static import stepOverlap4nodes_static
-from stepBL1_static import stepBL1_static
-from stepBL2_static import stepBL2_static
-from stepBL3_static import stepBL3_static
-from stepBL4_static import stepBL4_static
+from stepBL_static import stepBL_static
 
 from neighbor_reward_factor import neighbor_reward_factor
 from neighbor_reward_factor import neighbor_val
@@ -39,11 +36,11 @@ if __name__ == '__main__':
     best_score = -np.inf
     test_mode = False 
     render = False 
-    n_games =  1000
+    n_games =  500
     runs = 1
     Max_iterations = 1500    
     uavs = 4
-    n_games_exp = 250    
+    n_games_exp = 500    
     cov_tot = []
     ene_tot=  []
     fair_tot = []
@@ -244,6 +241,9 @@ if __name__ == '__main__':
 
         MAX_Connected_users_allowed = 150
         ####
+        Los =200
+        His = 800
+        zLims = 380
          
          
          
@@ -300,10 +300,10 @@ if __name__ == '__main__':
             action4 = random.randint(0,6)
               
             
-            sprime1 = stepBL1_static(action1, x1, y1, z1, e1, dist1)
-            sprime2 = stepBL2_static(action2, x2, y2, z2, e2, dist2)
-            sprime3 = stepBL3_static(action3, x3, y3, z3, e3, dist3)
-            sprime4 = stepBL4_static(action4, x4, y4, z4, e4, dist4)
+            sprime1 = stepBL_static(action1, x1, y1, z1, e1, dist1, Los, His, zLims)
+            sprime2 = stepBL_static(action2, x2, y2, z2, e2, dist2, Los, His, zLims)
+            sprime3 = stepBL_static(action3, x3, y3, z3, e3, dist3, Los, His, zLims)
+            sprime4 = stepBL_static(action4, x4, y4, z4, e4, dist4, Los, His, zLims)
              
             
             cov_obs = stepOverlap4nodes_static(sprime1[0], sprime1[1], sprime1[2], sprime2[0], sprime2[1], sprime2[2], sprime3[0], sprime3[1], sprime3[2], sprime4[0], sprime4[1], sprime4[2], xsef, ysef)
@@ -419,10 +419,10 @@ if __name__ == '__main__':
                 #print([action1, action2, action3, action4])
                 
                 #new_observation, reward, done, _ = env.step(action1)
-                sprime1 = stepBL1_static(action1, sprime1[0], sprime1[1], sprime1[2], sprime1[3], sprime1[5])
-                sprime2 = stepBL2_static(action2, sprime2[0], sprime2[1], sprime2[2], sprime2[3], sprime2[5])
-                sprime3 = stepBL3_static(action3, sprime3[0], sprime3[1], sprime3[2], sprime3[3], sprime3[5])
-                sprime4 = stepBL4_static(action4, sprime4[0], sprime4[1], sprime4[2], sprime4[3], sprime4[5])
+                sprime1 = stepBL_static(action1, sprime1[0], sprime1[1], sprime1[2], sprime1[3], sprime1[5], Los, His, zLims)
+                sprime2 = stepBL_static(action2, sprime2[0], sprime2[1], sprime2[2], sprime2[3], sprime2[5], Los, His, zLims)
+                sprime3 = stepBL_static(action3, sprime3[0], sprime3[1], sprime3[2], sprime3[3], sprime3[5], Los, His, zLims)
+                sprime4 = stepBL_static(action4, sprime4[0], sprime4[1], sprime4[2], sprime4[3], sprime4[5], Los, His, zLims)
                 
                 cov_obs = stepOverlap4nodes_static(sprime1[0], sprime1[1], sprime1[2], sprime2[0], sprime2[1], sprime2[2], sprime3[0], sprime3[1], sprime3[2], sprime4[0], sprime4[1], sprime4[2], xsef, ysef)
 
@@ -564,15 +564,10 @@ if __name__ == '__main__':
                 fair_sum = np.add(fair_sum, cov_obs[uavs])
                 ##print(fair_sum)
                 fairness_dev = step_fairness(fair_sum)
-                shannon_rate = fairness_dev
+                
                 Bw = 1000000  #
 
                 
-
-                shannon_rate = fairness_dev
-                
-                ##print(fairness_dev)
-
                 ###################Energy Efficiency
 
                 covdiff = (cov_obs[0]+cov_obs[1]+cov_obs[2]+cov_obs[3])-(old_cov1+old_cov2+old_cov3+old_cov4)
@@ -592,11 +587,10 @@ if __name__ == '__main__':
                 tp4 = devices_by_UAVs[3]+tp4
                 
                 
-                #print([tp1, tp2, tp3, tp4])
+                
                 tp_sum = sum([tp1, tp2, tp3, tp4])
                 energy_sum = sum([energy_UAV1, energy_UAV2, energy_UAV3, energy_UAV4])
-                #eneeff = tp_sum/energy_sum
-                #print(eneeff)
+                
 
                 reached_tp = devices_by_UAVs[0] + devices_by_UAVs[1] + devices_by_UAVs[2] + devices_by_UAVs[3] 
 
@@ -610,7 +604,6 @@ if __name__ == '__main__':
                 sprime4val = np.array([sprime4[0], sprime4[1], sprime4[2], cov_obs[3]-old_cov4, sprime4[3]/(sprime4[3]+sprime4[3])])
                  
 
-                #sprime, r, done, info = [np.array([200,200,200,45.5]), 4, 0, 1] #env.step(a)
                 r_sum1 += r1
                 r_sum2 += r2
                 r_sum3 += r3
@@ -642,11 +635,6 @@ if __name__ == '__main__':
                 energy_UAV3 = sprime3[3]
                 energy_UAV4 = sprime4[3]
 
-##                tp1 = devices_by_UAVs[0]
-##                tp2 = devices_by_UAVs[1]
-##                tp3 = devices_by_UAVs[2]
-##                tp4 = devices_by_UAVs[3]
-##                 
 
                 old_cov1 = cov_obs[0];
                 old_cov2 = cov_obs[1];
@@ -702,10 +690,7 @@ if __name__ == '__main__':
             eps_history4.append(epsilon)
             steps_arr4.append(itern)                
 
-                   
-            
-
-
+      
 
             sample_len = min(10000, len(scores1))
             avg_score = np.mean(scores1[-(sample_len):])
@@ -722,10 +707,9 @@ if __name__ == '__main__':
             #print(f'Episode {i}: score={score}, average score={avg_score}, epsilon={epsilon}, steps={itern}')
             
             
-            print(epsilon)
+            print("4 UAVs Deployed MAD-DDQN")
             print("Episode: ", i, "Iteration: ", itern)
-            print("Device Fairness: ", fairness_dev)
-            #print("UAV Load Fairness: ", fairness)
+            print("Device Fairness: ", fairness_dev)            
             print("Energy Efficiency: ", eneeff)
             print("Throughput: ", tot_tp)            
             print("Total reward:", [r_sum1,r_sum2,r_sum3,r_sum4])
@@ -746,7 +730,6 @@ if __name__ == '__main__':
              
 
             devfairness.append(fairness_dev)
-            fairfact.append(fairness)
             
             truput.append(tot_tp)
             dist_1.append(sprime1[5])

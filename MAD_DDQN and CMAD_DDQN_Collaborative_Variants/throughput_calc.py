@@ -305,7 +305,10 @@ def TP(xo1, yo1, zo1, xo2, yo2, zo2,xo3, yo3, zo3, xo4, yo4, zo4, xsef, ysef, no
     dm3 = []
     dm4 = []
 
-    
+    kk= 0
+    kk2= 0
+    kk3= 0
+    kk4= 0
     
 
     for kk in m1:
