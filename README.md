@@ -18,3 +18,13 @@ Due to the difficulty in obtaining non-sparse and temporal mobility traces, seve
 
 In our simulations, we also use some real world data, especially in the DAMAD-DDQN and DACEMAD-DDQN variants where we investigate different road traffic scenarios in the Republic of Ireland. Some of the data were gotten from SUMO via the link: https://github.com/maxime-gueriau/ITSC2020_CAV_impact.
 The FCD script is included for reproducibility. Also since the FCD data is quite large, BaseX was used to query the data and filter out the GPS data of the vehicles and persons in the network.
+
+You may cite using:
+
+For DQLSI:
+B. Omoniwa, B. Galkin and I. Dusparic, "Energy-aware optimization of UAV base stations placement via decentralized multi-agent Q-learning," 2022 IEEE 19th Annual Consumer Communications & Networking Conference (CCNC), Las Vegas, NV, USA, 2022, pp. 216-222, doi: 10.1109/CCNC49033.2022.9700536.
+
+For MAD-DDQN: 
+B. Omoniwa, B. Galkin and I. Dusparic, "Optimizing Energy Efficiency in UAV-Assisted Networks Using Deep Reinforcement Learning," in IEEE Wireless Communications Letters, vol. 11, no. 8, pp. 1590-1594, Aug. 2022, doi: 10.1109/LWC.2022.3167568.
+
+For queries and advice on improvement, you may reach me on tunjiomoniwa at yahoo dot com.
