@@ -117,12 +117,29 @@ def stepOverlap4nodes_static(xo1, yo1, zo1, xo2, yo2, zo2,xo3, yo3, zo3, xo4, yo
     Cov_UAV4 = coveragefactorstatic4
     
     ### removed redundant zeros in the set
-    Overlap_container1.remove(0)
-    Overlap_container2.remove(0)
-    Overlap_container3.remove(0)
-    Overlap_container4.remove(0)
-    
-    
+    if 0 in Overlap_container1:
+        Overlap_container1.remove(0)
+    else:
+        Overlap_container1
+
+    ### removed redundant zeros in the set
+    if 0 in Overlap_container2:
+        Overlap_container2.remove(0)
+    else:
+        Overlap_container2
+
+    ### removed redundant zeros in the set
+    if 0 in Overlap_container3:
+        Overlap_container3.remove(0)
+    else:
+        Overlap_container3
+
+    ### removed redundant zeros in the set
+    if 0 in Overlap_container4:
+        Overlap_container4.remove(0)
+    else:
+        Overlap_container4
+       
     
 
     Overgroup = [Overlap_container1, Overlap_container2, Overlap_container3, Overlap_container4]
