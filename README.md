@@ -1,6 +1,6 @@
 # DMARL
-This git repository is linked to the thesis research titled: "Using deep reinforcement learning to optimise energy efficiency of UAV small
-cells in urban environments" It presents codes for the Decentralised Multi-Agent Reinforcement Learning (DMARL) for UAV-assisted networks. Here, each UAV in the network is equipped with an autonomous agent.  
+This git repository is linked to the thesis research titled: "Optimising Energy Efficiency in UAV-Assisted Networks using Multi-Agent
+Reinforcement Learning" It presents codes for the Decentralised Multi-Agent Reinforcement Learning (DMARL) for UAV-assisted networks. Here, each UAV in the network is equipped with an autonomous agent.  
 Our DMARL solution comprises of 5 variants, namely: 
 1. DQLSI variant coded using MATLAB, while
 2. MAD-DDQN,
