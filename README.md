@@ -29,4 +29,12 @@ For MAD-DDQN:
 
 B. Omoniwa, B. Galkin and I. Dusparic, "Optimizing Energy Efficiency in UAV-Assisted Networks Using Deep Reinforcement Learning," in IEEE Wireless Communications Letters, vol. 11, no. 8, pp. 1590-1594, Aug. 2022, doi: 10.1109/LWC.2022.3167568.
 
+For CMAD-DDQN:
+
+B. Omoniwa, B. Galkin and I. Dusparic, "Communication-enabled deep reinforcement learning to optimise energy-efficiency in UAV-assisted networks," Vehicular Communications, vol. 43, 2023, 100640, ISSN 2214-2096, https://doi.org/10.1016/j.vehcom.2023.100640.
+
+For DAMAD-DDQN and DACEMAD-DDQN:
+
+B. Omoniwa, B. Galkin and I. Dusparic, "Density-Aware Reinforcement Learning to Optimise Energy Efficiency in UAV-Assisted Networks," IEEE WiMob 2023 - 19th International Conference on Wireless and Mobile Computing, Networking and Communications (WiMob), pp. 1-7, https://arxiv.org/pdf/2306.08785.pdf
+
 For queries and advice on improvement, you may reach me on tunjiomoniwa at yahoo dot com.
